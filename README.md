@@ -4,6 +4,7 @@
 17. [Задание 17 (числовая последовательность)](#задание-17)
 19. [Задания 19—21 (теория игр)](#задания-1921)
 25. [Задание 25 (перебор чисел)](#задание-25)
+26. [Задание 26 (что-то с сортировкой)](#задание-26)
 
 ## Задание 17
 
@@ -128,4 +129,30 @@ from fnmatch import fnmatch
 for n in range(0, 10**10, 2024):
     if fnmatch(str(n), "1?2157*4"):
         print(n, n // 2024)
+```
+
+## Задание 26
+### Сюжет: администратор и файлы
+Пример — задача 225 с kompege.ru
+```python
+with open("26.txt") as f:
+    S, N = [int(_) for _ in f.readline().split()]
+    A = [int(_) for _ in f.readlines()]
+
+A.sort(reverse=True)
+
+print(A[:100])
+
+s = 0
+i = 0
+while s + A[i] < S:
+    s += A[i]
+    i += 1
+
+for j in range(i, len(A)):
+    if A[j] <= S - s:
+        s += A[j]
+        break
+    
+print(i + 1, A[j])
 ```
