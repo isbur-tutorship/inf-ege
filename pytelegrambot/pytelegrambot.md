@@ -27,18 +27,16 @@
 
 ![](signup2.png)
 
-Как только вы залогинитесь, вы увидите домашнюю страницу пользователя:
+Как только ты залогинишься, увидишь домашнюю страницу пользователя:
 
 ![](signup3.png)
 
 # Создать репл
 
-Чтобы создать репл (проект), зайдите на домашнюю страницу пользователя ([https://replit.com/~]) и нажмите кнопку "Сreate Repl" в боковом меню.
+Чтобы создать репл (проект), зайди на домашнюю страницу пользователя ([https://replit.com/~]) и нажми кнопку "Сreate Repl" в боковом меню.
 
-![create-repl.gif]
+![](create-repl.gif)
 
-To create one, navigate to Replit and click the create button in the sidebar.
+Выбери имя репла и шаблон. В нашем случае это будет Python.
 
-create a Repl
-
-Next, give your Repl a name and choose the Template you want to use. 
+![](create-repl2.gif)
