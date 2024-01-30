@@ -19,5 +19,13 @@
 > Убедись, что хранишь токен в надёжном месте, относись к нему как к паролю и не делись ни с кем.
 
 # Зарегистрируйся на ![Replit'е](https://replit.com)
+To get started, you will first need to go to the Replit homepage. In the top right hand corner, click on Sign Up.
+![](signup.png)
+
+You can create an account with your own username, email, and password. Or you can create an account using your Google, Facebook, or GitHub account.
+Screen-Shot-2021-11-03-at-11.38.16-AM
+
+Once you are logged in, then it should take you to your account homepage.
+Screen-Shot-2021-11-03-at-11.39.37-AM
 
 Проще всего использовать свой Google-аккаунт.
