@@ -341,9 +341,114 @@ for i in range(len(A)):
 
 ## Задания 19—21
 
+> * Задание 1 из домашней работы Флеша *
+
 Можно делать через Excel:
 
 https://docs.google.com/spreadsheets/d/1iB98T5RNAmyIp3He0m0ZHyAwhQTXvJqJ9lKNiY--d8I/edit#gid=525142007
+
+Excel-подобный код для решения задания 19:
+
+```python
+def f(n):
+    a, b = 7, n
+    for i, j in (
+        (a + 1, b),
+        (a, b + 1),
+        (a + b, b),
+        (a, a + b)
+    ):
+        if max(2*i+j, i+2*j) >= 75:
+            return True
+
+for i in range(65):
+    if f(i):
+        print(i)
+        break
+```
+
+Excel-подобный код для решения задания 20:
+```python
+def f(a, b):
+    wins = []
+    for i, j in (
+        (a + 1, b),
+        (a, b + 1),
+        (a + b, b),
+        (a, a + b)
+    ):
+        wins.append(
+            max(2*i+j, i+2*j) >= 75 and
+            i + j < 75
+        )
+    if all(wins):
+        return True
+
+def g(a, b):
+    for i, j in (
+        (a + 1, b),
+        (a, b + 1),
+        (a + b, b),
+        (a, a + b)
+    ):
+        if f(i, j):
+            return True
+            
+for i in range(65):
+    if g(7, i):
+        print(i)
+```
+
+Excel-подобный код для решения 21 задачи:
+```python
+def f(a, b):
+    wins = []
+    for i, j in (
+        (a + 1, b),
+        (a, b + 1),
+        (a + b, b),
+        (a, a + b)
+    ):
+        wins.append(
+            max(2*i+j, i+2*j) >= 75 and
+            i + j < 75
+        )
+    if all(wins):
+        return True
+
+def g(a, b):
+    for i, j in (
+        (a + 1, b),
+        (a, b + 1),
+        (a + b, b),
+        (a, a + b)
+    ):
+        if f(i, j):
+            return True
+
+def h(a, b): # Петя
+    wins = []
+    for i, j in (
+        (a + 1, b),
+        (a, b + 1),
+        (a + b, b),
+        (a, a + b)
+    ):
+        wins.append(
+            g(i, j) or 
+            (max(2*i+j, i+2*j) >= 75 and
+                i + j < 75
+            )
+        )
+    if all(wins):
+        return True
+
+for i in range(65):
+    if h(7, i):
+        print(i)
+```
+
+Краткое рекурсивное решение для заданий 20-21:
 
 ```python
 from functools import lru_cache
