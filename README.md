@@ -340,6 +340,11 @@ for i in range(len(A)):
 Поэтому чтобы не получать неожиданных результатов от операций взятия остатка, надо брать остаток от модуля (`abs(n)`) от этого числа.
 
 ## Задания 19—21
+
+Можно делать через Excel:
+
+https://docs.google.com/spreadsheets/d/1iB98T5RNAmyIp3He0m0ZHyAwhQTXvJqJ9lKNiY--d8I/edit#gid=525142007
+
 ```python
 from functools import lru_cache
 
