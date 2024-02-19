@@ -450,6 +450,38 @@ for i in range(65):
         print(i)
 ```
 
+Excel-подобный код решения для задания 21 с использованием обобщённых функций:
+```python
+def Eeee(i, j):
+    return max(2*i+j, i+2*j) >= 75
+
+def Meta(a, b, condition, allOrAny = all):
+    wins = []
+    for i, j in (
+        (a + 1, b),
+        (a, b + 1),
+        (a + b, b),
+        (a, a + b)
+    ):
+        wins.append(condition(i, j))
+    if allOrAny(wins):
+        return True
+
+def f(a, b):
+    return Meta(a, b, lambda i, j: Eeee(i, j) and i+j < 75)
+
+def g(a, b):
+    return Meta(a, b, lambda i, j: f(i, j), any)
+
+def h(a, b): # Петя
+    return Meta(a, b, lambda i, j: g(i, j) or (Eeee(i, j) and i + j < 75))
+
+
+for i in range(65):
+    if h(7, i):
+        print(i)
+```
+
 Краткое рекурсивное решение для заданий 20-21:
 
 ```python
