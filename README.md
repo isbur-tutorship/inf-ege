@@ -15,6 +15,7 @@
 24. [Задание 24 (обработка строковых данных)](#задание-24)
 25. [Задание 25 (перебор чисел)](#задание-25)
 26. [Задание 26 (что-то с сортировкой)](#задание-26)
+27. [Задание 27 (программирование)](#задание-27)
 ### Архив
 13. [Задание 13 (подсчёт числа путей в графе)](#задание-13-old)
 
@@ -952,6 +953,52 @@ for j in range(i, len(A)):
     
 print(i + 1, A[j])
 ```
+
+
+## Задание 27 
+
+
+```
+/*
+    https://inf-ege.sdamgia.ru/problem?id=27424
+*/
+#include <algorithm>
+#include <iostream>
+#include <fstream>
+#include <vector>
+using namespace std;
+
+int main() {
+    fstream FILE;
+    int N;
+    long int sum = 0;
+    
+    FILE.open("27-B_demo.txt");
+    FILE >> N;
+    vector<int> A(N), B(N), C(N);
+    for (int i = 0; i < N; i++){
+        FILE >> A[i] >> B[i];
+    }
+    FILE.close();
+
+    for (int i = 0; i < N; i++){
+        sum += max(A[i], B[i]);
+        C[i] = abs(A[i] - B[i]);
+    }
+
+    sort(C.begin(), C.end());
+    for (int i = 0; i < N; i++){
+        if (C[i] % 3 != 0){
+            sum -= C[i];
+            break;
+        }
+    }
+    
+    cout << sum << endl;
+    cout << sum % 3 << endl;
+}
+```
+
 
 ## Архив
 
