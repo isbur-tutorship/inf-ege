@@ -196,7 +196,9 @@ for z in range (1,100):
 
 ## Задание 6
 
-### Подсчёт точек при помощи Python
+Неплохая обзорная статья по нормальным методам решения: https://ege-study.ru/ru/ege/materialy/informatika/polnyi-kurs-podgotovki-k-ege-po-informatike/zadanie-6
+
+### ХТОНИЧЕСКИЙ метод подсчёта точек при помощи Python (Ray Tracing)
 
 В этом способе используются напрямую объекты библиотеки Tkinter, которую использует пакет turtle.
 
