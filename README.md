@@ -535,6 +535,18 @@ for a in цифры:
 print(counter)
 ```
 
+Решение с применением библиотеки `itertools`:
+
+```python
+from itertools import product
+
+counter = 0
+for n in product("1234", repeat=5):       
+    counter += n.count("1") == 2
+    
+print(counter)
+```
+
 Перестановки с повторениями:
 https://www.matburo.ru/tvart_sub.php?p=calc_PR
 Количество перестановок всех объектов делим на количества перестановок внутри групп этих объектов.
