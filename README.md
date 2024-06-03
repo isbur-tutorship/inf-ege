@@ -563,7 +563,7 @@ $V=v\tau$
 
 Ну и вычисляем время по формуле:
 
-$\tau=\frac{\nu\cdot t\cdot i\cdot n}{v}
+$\tau=\frac{\nu\cdot t\cdot i\cdot n}{v}$
 
 ## Задание 8
 
