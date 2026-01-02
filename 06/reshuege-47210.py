@@ -1,4 +1,4 @@
-from turtle import*
+from turtle import *
 left(90)
 m = 30 # масштаб
 tracer(0) # рисовать моментально
