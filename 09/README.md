@@ -1,0 +1,1 @@
+https://stepik.org/course/100056/syllabus — неплохой блок упражнений на Excel
