@@ -1,0 +1,1 @@
+print(int("trac", 36))
