@@ -3,20 +3,23 @@ import wave
 import struct
 
 # Параметры аудио
-sample_rate = 16000   # частота дискретизации (Гц)
-duration = 2.0       # длительность (сек)
+sample_rate = 32000   # частота дискретизации (Гц)
+duration = 10.0       # длительность (сек)
 amplitude = 32767    # максимальная амплитуда для 16-битного звука
 
 # === вот тут ученики могут менять функцию ===
 def f(t):
-    switch = np.floor(3*t) % 3
-    frequencies = [
-        2*np.pi*220,
-        2*np.pi*int(220*2**(1/6)**2),
-        2*np.pi*int(220*2**(1/6)**4)
-    ]
-    return np.sin(frequencies[t]*t)
-
+    # switch = np.floor(3*t) % 3
+    # frequencies = [
+        # 2*np.pi*220,
+        # 2*np.pi*int(220*2**(1/6)**2),
+        # 2*np.pi*int(220*2**(1/6)**4)
+    # ]
+    # return np.sin(2*np.pi*440*t)
+    # np.random.seed(0)
+    # return np.exp(-5*t) * np.random.uniform(-1, 1, len(t))
+    freq = 220 + (np.floor(4*t) % 4)*110
+    return np.sin(2*np.pi*freq*t)
 # =============================================
 
 # Генерация массива времени
