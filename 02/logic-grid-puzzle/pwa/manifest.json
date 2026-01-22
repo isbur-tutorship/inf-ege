@@ -1,0 +1,15 @@
+{
+  "name": "Logic Grid Puzzle",
+  "short_name": "Logic Grid",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#1f2937",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}

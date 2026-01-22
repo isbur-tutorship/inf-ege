@@ -1,0 +1,5 @@
+node_modules
+
+# pixi environments
+.pixi
+*.egg-info

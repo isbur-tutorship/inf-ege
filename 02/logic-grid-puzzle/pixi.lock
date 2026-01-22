@@ -1,0 +1,16 @@
+version: 6
+environments:
+  default:
+    channels:
+    - url: https://conda.anaconda.org/conda-forge/
+    packages:
+      win-64:
+      - conda: https://conda.anaconda.org/conda-forge/win-64/nodejs-25.2.1-he453025_1.conda
+packages:
+- conda: https://conda.anaconda.org/conda-forge/win-64/nodejs-25.2.1-he453025_1.conda
+  sha256: 9742d28cf4a171dc9898bfb3c8512858f1ed46aa3cbc26d8839003d879564beb
+  md5: 461d47b472740c68ec0771c8b759868b
+  license: MIT
+  license_family: MIT
+  size: 30449097
+  timestamp: 1765444649904

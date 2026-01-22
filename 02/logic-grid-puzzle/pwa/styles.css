@@ -1,0 +1,110 @@
+:root {
+  color-scheme: light;
+  --bg: #f8fafc;
+  --panel: #ffffff;
+  --ink: #0f172a;
+  --accent: #0ea5e9;
+  --grid: #1f2937;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: radial-gradient(circle at top, #e2e8f0, #f8fafc 50%);
+  color: var(--ink);
+}
+
+.app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+  display: grid;
+  gap: 24px;
+}
+
+.app__header h1 {
+  margin: 0 0 8px;
+  font-size: 2rem;
+}
+
+.app__header p {
+  margin: 0;
+  opacity: 0.7;
+}
+
+.board {
+  display: grid;
+  gap: 12px;
+}
+
+.board__label {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 52px);
+  grid-auto-rows: 52px;
+  gap: 8px;
+  padding: 16px;
+  background: var(--panel);
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.grid--target {
+  opacity: 0.75;
+}
+
+.cell {
+  border-radius: 10px;
+  background: #e2e8f0;
+  border: 2px solid var(--grid);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.cell--on {
+  background: var(--accent);
+  color: #fff;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--ink);
+  color: #fff;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.button--install {
+  background: var(--accent);
+}
+
+@media (max-width: 520px) {
+  .grid {
+    grid-template-columns: repeat(4, 42px);
+    grid-auto-rows: 42px;
+  }
+}
