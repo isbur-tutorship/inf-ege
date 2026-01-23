@@ -1,7 +1,17 @@
 import type { GameState } from "./state";
 
-function normalizeGuess(value: string) {
+export function normalizeGuess(value: string) {
   return value.toLowerCase().replace(/[^a-z]/g, "");
+}
+
+export function getCorrectOrder(state: GameState) {
+  return normalizeGuess(state.correctOrder);
+}
+
+export function isGuessCorrect(state: GameState, value: string) {
+  const normalized = normalizeGuess(value);
+  if (!normalized) return false;
+  return normalized === getCorrectOrder(state);
 }
 
 export function createGuessController(
@@ -11,14 +21,13 @@ export function createGuessController(
 ) {
   const update = () => {
     const normalized = normalizeGuess(input.value);
-    const expected = state.colOrder.map((index) => state.colLabels[index]).join("");
     if (!normalized) {
       status.textContent = "";
       status.classList.remove("guess__status--win");
       return;
     }
 
-    if (normalized === expected) {
+    if (isGuessCorrect(state, input.value)) {
       status.textContent = "Correct";
       status.classList.add("guess__status--win");
     } else {

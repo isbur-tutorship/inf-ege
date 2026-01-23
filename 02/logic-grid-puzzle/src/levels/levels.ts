@@ -1,28 +1,42 @@
-import type { Grid, TargetGrid } from "../features/state";
+import type { Grid, TargetGrid, Label, LabelSequence } from "../features/state";
 
 export type Level = {
   id: string;
   name: string;
   current: Grid;
   target: TargetGrid;
-  colLabels: string[];
+  colLabels?: Label[];
+  correctOrder: LabelSequence;
+  remark?: string;
 };
 
 export const levels: Level[] = [
   {
-    id: "default-4x4",
-    name: "Default 4x4",
+    id: "reshuege-15097",
+    name: "01",
     current: [
-      [1, 0, 1, 0],
-      [0, 1, 0, 1],
+      [1, 0, 0],
+      [1, 1, 0]
+    ],
+    target: [
+      [0, 0, null],
+      [1, null, null] 
+    ],
+    correctOrder: "yzx"
+  },  
+  {
+    id: "reshuege-19051",
+    name: "02",
+    current: [
       [1, 0, 0, 1],
-      [0, 1, 1, 0],
+      [1, 0, 1, 1],
+      [1, 1, 1, 0]
     ],
     target: [
       [0, 1, 1, 0],
-      [1, 0, null, 1],
-      [0, 1, 0, 1],
+      [0, null, null, null],
+      [null, 1, 0, 1] 
     ],
-    colLabels: ["w", "x", "я", "z"],
+    correctOrder: "xwzy"
   },
 ];
