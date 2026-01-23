@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  root: "pwa",
+  root: "src",
   build: {
     outDir: "../dist",
     emptyOutDir: true,

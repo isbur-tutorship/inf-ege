@@ -36,52 +36,15 @@ body {
   opacity: 0.7;
 }
 
-.board {
-  display: grid;
-  gap: 12px;
-}
-
-.board__label {
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, 52px);
-  grid-auto-rows: 52px;
-  gap: 8px;
-  padding: 16px;
-  background: var(--panel);
-  border-radius: 16px;
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
-}
-
-.grid--target {
-  opacity: 0.75;
-}
-
-.cell {
-  border-radius: 10px;
-  background: #e2e8f0;
-  border: 2px solid var(--grid);
-  display: grid;
-  place-items: center;
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-
-.cell--on {
-  background: var(--accent);
-  color: #fff;
-}
-
-.actions {
+.app__title {
   display: flex;
+  align-items: center;
   gap: 12px;
-  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.app__title h1 {
+  margin: 0;
 }
 
 button {
@@ -102,9 +65,15 @@ button:hover {
   background: var(--accent);
 }
 
+.button--ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 2px solid var(--ink);
+}
+
 @media (max-width: 520px) {
   .grid {
-    grid-template-columns: repeat(4, 42px);
+    grid-template-columns: repeat(var(--grid-cols, 4), 42px);
     grid-auto-rows: 42px;
   }
 }

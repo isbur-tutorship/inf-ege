@@ -1,0 +1,59 @@
+.header,
+.corner {
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: 2px solid var(--grid);
+}
+
+.corner {
+  background: #cbd5f5;
+  border-style: dashed;
+}
+
+.header {
+  background: var(--ink);
+  color: #fff;
+  cursor: grab;
+}
+
+.header:active {
+  cursor: grabbing;
+}
+
+.header--dragging {
+  opacity: 0.6;
+}
+
+.header--dim {
+  opacity: 0.4;
+}
+
+.drag-ghost {
+  position: fixed;
+  left: -9999px;
+  top: -9999px;
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  background: #0f172a;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.2);
+  z-index: 9999;
+}
+
+.drag-ghost--row {
+  grid-auto-flow: column;
+}
+
+.drag-ghost--col {
+  grid-auto-flow: row;
+}
+
+.drag-ghost .cell {
+  width: 44px;
+  height: 44px;
+  border-color: #0b1324;
+}
