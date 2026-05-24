@@ -1,0 +1,121 @@
+### Про перевод между системами счисления
+
+Есть встроенная функция `bin()`, вот пример её использования:
+
+```python
+n = 3
+n = bin(n)
+n = n[2:]
+if n[len(n)-1]=="0":
+    n = "10" + n
+else:
+    n = "1" + n + "01"
+n = int(n, 2)
+print(n)
+```
+
+Обратно в десятичную систему счисления можно перевести, используя функцию int() с двумя аргументами, первый — это запись числа в данной системе счисления (в виде строчки), второй — основание данной системы счисления:
+
+```python
+print(n)
+n = int(n, 2)
+print(n)
+```
+![119](data:image/png;base64,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)
+
+ОСТОРОЖНО: функция int(number, base) работает только при base <= 36 (цифр больше не хватает 🙁). При большем основании придётся писать собственный перевод. Для небольших чисел подойдёт что-то в стиле:
+
+![](data:image/png;base64,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)
+
+Если надо перевести в систему счисления с основанием меньшим, чем 10, то можно написать, например, такую программу (задание 14):
+
+```python
+n = 8**2024 - 4**1035 + 2**124 - 58
+k = 9
+s = ""
+while n > 0:
+    s = str(n % k) + s
+    n = n // k
+print(s, s.count("1"))
+```
+### Пример (стандартный)
+
+№12237 на kompege
+
+> На вход алгоритма подаётся натуральное число N. Алгоритм строит по нему новое число R следующим образом.
+> 1. Строится двоичная запись числа N.
+> 2. Далее эта запись обрабатывается по следующему правилу:
+>    
+>     а) если число N чётное, то к этой записи дописываются две последние двоичные цифры;
+>    
+>     б) если число N нечётное, то в начало числа записывается цифра 1, а в конец числа цифра 0.
+>    
+> 3. Полученная таким образом запись является двоичной записью искомого числа R.
+> переводится в десятичную систему и выводится на экран.
+> 
+> Например, для исходного числа $11 = 1011_2$ результатом является число $110110_2 = 54$, а для исходного числа $10 = 1010_2$ это
+> число $101010_2 = 42$.
+> Укажите максимальное число N, после обработки которого с помощью этого алгоритма получается число R, меньшее 100.
+
+```python
+for z in range (1,100):
+    s = bin(z)[2:]
+    if z % 2 == 0:
+        s = s + s[-2:]
+    else:
+        s = "1" + s + "0"
+    i = int(s,2)
+    if i < 100:
+        print(z,i)
+        print("---------------------------")
+```
+
+### Пример (с нестандартной системой счисления)
+
+№ 4317 на kompege
+
+> Автомат обрабатывает натуральное число N по следующему алгоритму:
+> 
+> 1. Строится пятеричная запись числа N.
+>
+> 2. К полученной записи дописываются разряды. Если последняя цифра в пятеричной записи четная, справа дописывается 2, если нечетная – слева дописывается 2 и справа 3.
+> 
+> 3. Результат переводится в десятичную систему и выводится на экран.
+> 
+>
+> Пример. Дано число N = 13. Алгоритм работает следующим образом:
+> 
+> 4. Пятеричная запись числа N: 23.
+> 
+> 5. Последняя цифра нечетная, следовательно слева дописываем 2, справа 3: 2+23+3 = 2233. Десятичная запись числа 318.
+> 
+> 6. На экран выводится число 318.
+>
+>
+> В результате работы автомата на экране появилось число, меньшее 1000. Для какого наибольшего значения N данная ситуация возможна?
+
+```python
+# Функция перевода из 10-сятичной в 5-ричную
+def to5(n):
+    s = ""
+    while n != 0:
+        d = n % 5
+        n = n // 5
+        s = str(d) + s
+    return s
+
+# Функция, реализующая алгоритм Исполнителя
+def f(n):
+    n = to5(n)
+    if int(n[-1]) % 2 == 0:
+        n += "2"
+    else:
+        n = "2" + n + "3"
+    return int(n, 5)
+
+# Перебор
+for i in range(1000, 0, -1):
+    if f(i) < 1000:
+        print(i)
+        break
+```
