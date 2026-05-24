@@ -1,0 +1,28 @@
+
+```python
+# https://education.yandex.ru/ege/variants/597a2693-1f78-45be-8daf-d80e1f937a3d
+# Текстовый файл состоит из символов латинского алфавита в нижнем регистре (a—z) и цифр (0-9).
+
+# Определите в прилагаемом файле максимальную длину подстроки (непрерывной подпоследовательности), которая состоит из повторяющегося слова "yandex". Последнее слово в цепочке может быть неполным. По правилам leet (1337) символ "a" может быть заменён на символ "4", а символ "e" — на символ "3".
+
+# Так, в строке "qyandqqyand3xy4q" есть две подходящие подстроки: "yand" и "yand3xy4".
+
+
+f = open('24.txt')
+s = f.readline()
+s = "qyandqqyand3xy4q"
+
+s = s.replace("4", "a").replace("3", "e")
+s = s.replace("yandex", "@")
+for i in range(len("yandex") - 1, 0, -1):
+    substr = "yandex"[:i+1]
+    s = s.replace(substr, "$" * (i + 1))
+t = ""
+for c in s:
+    if c not in "@$":
+        t += " "
+    else:
+        t += c
+print(t.split())
+print(max(x.count("@")*6 + x.count("$") for x in t.split()))
+```
