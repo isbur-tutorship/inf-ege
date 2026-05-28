@@ -1,4 +1,4 @@
-from ipaddress import ip_network
+from ipaddress import *
 m = 0
 net = ip_network('154.24.165.32/255.255.255.224', 0)
 for ip in net:
