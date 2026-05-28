@@ -1,9 +1,11 @@
 
 > * Задание 1 из домашней работы Флеша *
 
-Можно делать через Excel:
+## Решение через Excel:
 
 https://docs.google.com/spreadsheets/d/1iB98T5RNAmyIp3He0m0ZHyAwhQTXvJqJ9lKNiY--d8I/edit#gid=525142007
+
+## Excel-подобный код:
 
 Excel-подобный код для решения задания 19:
 
@@ -138,7 +140,30 @@ for i in range(65):
         print(i)
 ```
 
-Краткое рекурсивное решение для заданий 20-21:
+## Укороченные решатели
+
+Частично укороченный решатель для 19 (выигрыш при наихудшем ходе Пети):
+```python
+from functools import lru_cache
+
+@lru_cache(None)
+def(a, b, c):
+    if a + b + c >= 73: return 0
+    ms = [
+        (a + 3, b, c), (a, b + 3, c), (a, b, c + 3),
+        (a + 13, b, c), (a, b + 13, c), (a, b, c + 13),
+        (a + 23, b, c), (a, b + 23, c), (a, b, c + 23)
+    ]
+    if any(f(*turn) == 0 for turn in ms): return 1
+    if any(f(*turn) == 1 for turn in ms): return 2
+
+for s in range(1, 24):
+    if f(2, s, 2*s) == 2:
+        print(s)
+        break
+```
+
+Частично укороченный решатель для заданий 20-21:
 
 ```python
 from functools import lru_cache
@@ -166,21 +191,82 @@ def f(a, b):
     if all(f(*turn) in (1, 3) for turn in turns):
         return 4
 
-#m = 46
-#m_i, m_j = 0, 0
-#for i in range(1, 46):
-#    for j in range(1, 46):
-#        if f(i, j) == 1:
-#            if (i + j) < m:
-#                m = i + j
-#                m_i = i
-#                m_j = j
-#
-#print(m, m_i, m_j)
-
 for i in range(6, 41):
     if f(5, i) == 3:
         print("#"*4, i)
     if f(5, i) == 4:
         print("#"*8, i)
+```
+
+Некоторые пояснения по коду.
+
+Про `*turn`:
+
+```python
+def f(a, b):
+    return a + b
+
+t = (1, 2) # Кортеж
+t[0] = 2   # Ошибка: кортеж — немутируемый тип
+t = [1, 2] # Список
+
+a = f(t) # Ошибка
+# f((1, 2), *)
+
+a = f(*t) # Всё ок: оператор * разворачивает кортеж/список
+
+print(a)
+```
+
+Цикл for может брать элементы из <u>любого</u> итерируемого объекта:
+
+```python
+for i in (1, 2, 3, 4, 5):
+    print(i)
+```
+
+Списочные выражения позволяют в одну строку создавать списки:
+
+```python
+[print(i) for i in range(5)]
+A = [i**2 for i in range(5)]
+```
+
+Некоторые функции принимают в качестве аргумента список (или развёрнутый список). В них можно совать списочное выражение без квадратных скобок:
+
+```python
+print(sum(i for i in range(5)))
+```
+
+Функция `any()` работает как логическое ИЛИ от большого числа аргументов:
+
+```python
+print(any([True, False, False]))
+# True
+
+print(any([False, False, False]))
+# False
+```
+
+Функция `all()` — как логическое И.
+
+Если интерпретатор ругается на превышение лимита глубины рекурсии, его можно увеличить:
+
+```python
+import sys
+sys.setrecusionlimit(20000)
+```
+
+Решала-чемпион:
+
+```python
+def w(a, m):    # def w(a, b, m): — для двух куч
+    if a >= 34: return m%2==0       # Условие победы
+    if m == 0: return False         # Прекращаем перебор
+    h = [w(a+2,m-1), w(a*3,m-1)]    # Перебор ходов
+    return any(h) if m%2 else all(h)
+
+print(19, [s for s in range(1, 34) if w(s, 2)])
+print(20, [s for s in range(1, 34) if w(s, 3) and not w(s,1)])
+print(21, [s for s in range(1, 34) if w(s, 4) and not w(s,2)])
 ```
