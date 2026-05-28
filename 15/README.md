@@ -1,4 +1,7 @@
-### Отрезки
+## Отрезки
+
+### Решение через "подсказку":
+
 #### Пример
 > На числовой прямой даны два отрезка: P = [5, 30] и Q = [14, 23]. Укажите наибольшую возможную длину промежутка A, для которого формула
 >
@@ -6,7 +9,6 @@
 >
 > тождественно истинна, то есть принимает значение 1 при любом значении переменной _х_.
 
-Подсказка к решению через Python:
 ```python
 s = ""
 P = range(5, 31)
@@ -23,20 +25,23 @@ for x in range(5, 40):
 print(s)
 ```
 
-Tip по скобочкам:
+### Решение через "подсказку" и рациональные числа:
+
 ```python
-print(False <= False)     # True
-print(False <= True)      # True
-print(True <= False)      # False
-print(True <= True)       # True
+def P(x): return 2 <= x <= 20
+def Q(x): return 15 <= x <= 25
 
-print(False == 0)
-print(True == 1)
-
-print(3 % 3 == 0 <= False)
-print((3 % 3 == 0) <= False)
+A = []
+counter = 0
+for i in range(80*5):
+    x = 0.2*i
+    expr = ((not (x in A)) <= (not P(x) or Q(x)))
+    if expr == 0:
+        counter += 0.2
+    print(int(expr), end = "")
+        
+print(counter)
 ```
-
 ## Поразрядная конъюнкция
 
 ![[Pasted image 20260524145519.png]]
@@ -59,3 +64,36 @@ for A in range(1, 1000):
         print(A)
         break
 ```
+
+## Плоскость
+
+```python
+for A in range(100):
+    results = []
+    for y in range(100):
+        for x in range(100):
+            expr = (y + 2*x < A) or (x > 20) or (y > 30)
+            results.append(expr)
+    if all(results):
+        print(A)
+        break
+```
+
+## Общие советы
+
+### Педантично расставляйте скобки!
+
+
+```python
+print(False <= False)     # True
+print(False <= True)      # True
+print(True <= False)      # False
+print(True <= True)       # True
+
+print(False == 0)
+print(True == 1)
+
+print(3 % 3 == 0 <= False)
+print((3 % 3 == 0) <= False)
+```
+
