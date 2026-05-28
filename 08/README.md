@@ -37,9 +37,9 @@ print(counter)
 ```python
 for a in product("ABC", repeat=3): print(a)
 ```
-![[Pasted image 20260525010553.png]]
-![[Pasted image 20260525010634.png]]
-![[Pasted image 20260525010653.png]]
+![[./assets/Pasted image 20260525010553.png]]
+![[./assets/Pasted image 20260525010634.png]]
+![[./assets/Pasted image 20260525010653.png]]
 
 ## Комбинаторное решение
 
