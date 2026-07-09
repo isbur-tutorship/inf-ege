@@ -44,7 +44,7 @@ print(counter)
 ```
 ## Поразрядная конъюнкция
 
-![[Pasted image 20260524145519.png]]
+![](./assets/Pasted%20image%2020260524145519.png)
 
 Подход с all():
 ```python
