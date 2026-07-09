@@ -82,3 +82,6 @@ $V=v\tau$
 
 $$\tau=\frac{\nu\cdot t\cdot i\cdot n}{v}$$
 
+## Больше разобранных примеров
+
+https://ege-study.ru/ru/ege/materialy/informatika/polnyi-kurs-podgotovki-k-ege-po-informatike/zadanie-7/

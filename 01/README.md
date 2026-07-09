@@ -1,3 +1,8 @@
+Хорошая вводная статья по графам:
+
+https://ege-study.ru/ru/ege/materialy/informatika/polnyi-kurs-podgotovki-k-ege-po-informatike/zadanie-1/
+
+
 Пример задания:
 https://inf-ege.sdamgia.ru/test?theme=357
 
