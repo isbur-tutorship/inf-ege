@@ -75,7 +75,7 @@ kompege-21906 (досрок 2026 года)
 =МАКС(F2:H2)+B2
 ```
 
-## Решение через Python
+## Решение через Python A
 
 Сохранить как текстовый файл с разделителями — табуляциями.
 
@@ -99,7 +99,39 @@ def f(n):
 print(max(f(i) for i in range(1, len(A))))
 ```
 
-Максимальная длительность пяти процессов одновременно
+## Решение через Python B
+
+Предварительно надо заменить в файле ";" на ",", потом сохранить как csv (в России, видимо, разделитель - ";").
+
+```python
+def my_print(A):
+    [print(x) for x in A]
+    
+f = open("22.csv")
+A = f.readlines()
+A = [s[:-2] for s in A]
+A = [s.split(";") for s in A]
+
+for l in A:
+    l[0] = int(l[0])
+    l[1] = int(l[1])
+    if "," in l[2]:
+        l[2] = [int(x) for x in l[2].split(",")]
+    else:
+        l[2] = [int(l[2])]
+
+for l in A:
+    if l[2] == [0]:
+        l.append(l[1])
+    else:
+        l.append(
+        	max([A[proc-1][3] for proc in l[2]] + l[1])
+        )
+        
+print(max(x[3] for x in A))
+```
+
+## Максимальная длительность пяти процессов одновременно
 
 ```python
 # kompege-27775
