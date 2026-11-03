@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>ЕГЭ по информатике</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="TODO
+Учесть комментарии отсюда:
+https://chatgpt.com/c/6a5795c5-c488-83eb-9e64-5d6dd01e12e5
+Теория
+Пример
+
+При регистрации в компьютерной системе каждому пользователю выдаётся пароль, состоящий из 15 символов и содержащий только символы Ш, К, О, Л, А (таким образом, используется 5 различных символов). Каждый такой пароль в компьютерной системе записывается минимально возможным и одинаковым целым количеством байт (при этом используется посимвольное кодирование и все символы кодируются одинаковым минимально возможным количеством бит). Укажите объём памяти в байтах, отводимый в этой системе для записи 30 паролей.
+">
+    <meta name="generator" content="Hugo 0.169.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    <link rel="stylesheet" href="/inf-ege/ananke/css/main.02a37ad6c4e155c542d276915a0e3f83f5c7c5fec443350f6e60753f1679b7a7.css" integrity="sha256-AqN61sThVcVC0naRWg4/g/XHxf7EQzUPbmB1PxZ5t6c=" crossorigin="anonymous">
+    <script>
+  (function () {
+    "use strict";
+
+    
+    
+    function revealButtons() {
+      var buttons = document.querySelectorAll(".code-block .code-copy[hidden]");
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].hidden = false;
+      }
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", revealButtons);
+    } else {
+      revealButtons();
+    }
+
+    function flash(button) {
+      var label = button.querySelector(".code-copy-label");
+      var previous = label ? label.textContent : null;
+      button.classList.add("is-copied");
+      if (label) label.textContent = "Copied";
+      window.setTimeout(function () {
+        button.classList.remove("is-copied");
+        if (label && previous !== null) label.textContent = previous;
+      }, 2000);
+    }
+
+    function legacyCopy(text) {
+      var area = document.createElement("textarea");
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "absolute";
+      area.style.left = "-9999px";
+      document.body.appendChild(area);
+      area.select();
+      var ok = false;
+      try {
+        ok = document.execCommand("copy");
+      } catch (e) {
+        ok = false;
+      }
+      document.body.removeChild(area);
+      return ok;
+    }
+
+    function copyFrom(button) {
+      var container = button.closest(".code-block");
+      if (!container) return;
+      var pre = container.querySelector("pre");
+      if (!pre) return;
+      var source = pre.querySelector("code") || pre;
+      var text = source.innerText;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function () { flash(button); },
+          function () { if (legacyCopy(text)) flash(button); }
+        );
+      } else if (legacyCopy(text)) {
+        flash(button);
+      }
+    }
+
+    document.addEventListener("click", function (event) {
+      var button = event.target.closest(".code-copy");
+      if (button) copyFrom(button);
+    });
+  })();
+</script>
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://isbur-tutorship.github.io/inf-ege/11/readme.html">
+    
+
+    
+    
+    <meta property="og:url" content="https://isbur-tutorship.github.io/inf-ege/11/readme.html">
+	<meta property="og:site_name" content="ЕГЭ по информатике">
+	<meta property="og:title" content="ЕГЭ по информатике">
+	<meta property="og:description" content="TODO Учесть комментарии отсюда:
+https://chatgpt.com/c/6a5795c5-c488-83eb-9e64-5d6dd01e12e5
+Теория Пример При регистрации в компьютерной системе каждому пользователю выдаётся пароль, состоящий из 15 символов и содержащий только символы Ш, К, О, Л, А (таким образом, используется 5 различных символов). Каждый такой пароль в компьютерной системе записывается минимально возможным и одинаковым целым количеством байт (при этом используется посимвольное кодирование и все символы кодируются одинаковым минимально возможным количеством бит). Укажите объём памяти в байтах, отводимый в этой системе для записи 30 паролей.">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="11">
+
+	<meta itemprop="name" content="ЕГЭ по информатике">
+	<meta itemprop="description" content="TODO Учесть комментарии отсюда:
+https://chatgpt.com/c/6a5795c5-c488-83eb-9e64-5d6dd01e12e5
+Теория Пример При регистрации в компьютерной системе каждому пользователю выдаётся пароль, состоящий из 15 символов и содержащий только символы Ш, К, О, Л, А (таким образом, используется 5 различных символов). Каждый такой пароль в компьютерной системе записывается минимально возможным и одинаковым целым количеством байт (при этом используется посимвольное кодирование и все символы кодируются одинаковым минимально возможным количеством бит). Укажите объём памяти в байтах, отводимый в этой системе для записи 30 паролей.">
+	<meta itemprop="wordCount" content="802">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="ЕГЭ по информатике">
+	<meta name="twitter:description" content="TODO Учесть комментарии отсюда:
+https://chatgpt.com/c/6a5795c5-c488-83eb-9e64-5d6dd01e12e5
+Теория Пример При регистрации в компьютерной системе каждому пользователю выдаётся пароль, состоящий из 15 символов и содержащий только символы Ш, К, О, Л, А (таким образом, используется 5 различных символов). Каждый такой пароль в компьютерной системе записывается минимально возможным и одинаковым целым количеством байт (при этом используется посимвольное кодирование и все символы кодируются одинаковым минимально возможным количеством бит). Укажите объём памяти в байтах, отводимый в этой системе для записи 30 паролей.">
+
+      
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production is-page is-page page-README">
+   
+  
+
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/inf-ege/index.html" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        ЕГЭ по информатике
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+<main class="pb7" role="main">
+  
+
+  <article class="page-README flex-l mw7 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100"><aside class="instapaper_ignoref b helvetica tracked ttu">
+    <a class="link dim" href="https://isbur-tutorship.github.io/inf-ege/11/index.html">11s</a>
+  </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1"></h1>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-100-l"><h2 id="todo">TODO</h2>
+<p>Учесть комментарии отсюда:</p>
+<p><a href="https://chatgpt.com/c/6a5795c5-c488-83eb-9e64-5d6dd01e12e5">https://chatgpt.com/c/6a5795c5-c488-83eb-9e64-5d6dd01e12e5</a></p>
+<h2 id="теория">Теория</h2>
+<h3 id="пример">Пример</h3>
+<blockquote>
+<p>При регистрации в компьютерной системе каждому пользователю выдаётся пароль, состоящий из 15 символов и содержащий только символы Ш, К, О, Л, А (таким образом, используется 5 различных символов). Каждый такой пароль в компьютерной системе записывается минимально возможным и одинаковым целым количеством байт (при этом используется посимвольное кодирование и все символы кодируются одинаковым минимально возможным количеством бит). Укажите объём памяти в байтах, отводимый в этой системе для записи 30 паролей.</p>
+</blockquote>
+<p>Элементы задания:</p>
+<ul>
+<li>Алфавит — набор используемых в паролях символов</li>
+<li>(Пример: {Ш, К, О, Л, А} — алфавит)
+<ul>
+<li>Мощность алфавита — число различных символов в составе алфавита
+<ul>
+<li>Будем обозначать мощность буквой $N$</li>
+<li>(В нашем примере мощность алфавита $N=5$)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Пароль — последовательность символов алфавита
+<ul>
+<li>Характеризуется длиной
+<ul>
+<li>Будем обозначать длину пароля буквой $k$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Пример:
+<ul>
+<li>Пусть $k=15$</li>
+<li>Примеры возможных паролей (всего разных паролей существует $5^{15} \approx 30$ млрд. штук):
+<ul>
+<li>ШКОЛААЛОКШШАЛКО</li>
+<li>ШКОЛАШКОЛАШКОЛА</li>
+<li>ОКАШКЛАШЛЛАШЛЛК</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Общее число паролей
+<ul>
+<li>Обозначаем буквой $L$</li>
+</ul>
+</li>
+<li>Глубина кодирования — длина кодового слова из 0 и 1, которыми мы кодируем символы пароля
+<ul>
+<li>Обозначаем буквой $i$</li>
+</ul>
+</li>
+</ul>
+<p>![[Pasted image 20260715163026.png|697]]</p>
+<p>Мощность алфавита и глубина кодирования связаны следующим соотношением:
+</p>
+$$ N \le 2^i $$<p>
+Порядок нахождения глубины кодирования обычно следующий:</p>
+<ul>
+<li>Допустим, мощность алфавита равна 5</li>
+<li>Находим максимальную степень двойки, которая не превышает нашу мощность. В данном случае, это вторая степень: $2^2 = 4 < 5$</li>
+<li>Если получилось точное равенство, то берём именно эту степень (например, если бы символов было 4, можно было бы взять вторую степень). В противном случае берём степень, следующую за найденной, в нашем случае, третью.</li>
+</ul>
+<p>Как раз получается, что двух бит (четырёх комбинаций) не хватает, чтобы закодировать все буквы слова &ldquo;ШКОЛА&rdquo;, а трёх бит (восемь комбинаций) пусть с избытком, но хватает:</p>
+<p>![[Pasted image 20260715163401.png]]</p>
+<p>Это правило работает и в обратную сторону. Зная глубину, можно оценить максимальную мощность алфавита. Например, если откуда-то стало известно (из условия, или из результатов вычислений), что $i=10$, то максимальная мощность алфавита, возможная при данной глубине кодирования, будет $N=2^{10}=1024$.</p>
+<ul>
+<li>
+<p>Информационный объём одного пароля (сферический в вакууме)</p>
+<ul>
+<li>Обозначается буквой $I$</li>
+<li>Находится по формуле $I = k\cdot i$</li>
+</ul>
+</li>
+<li>
+<p>Пример:</p>
+<ul>
+<li>Пусть $i=3$ бит</li>
+<li>Пусть $k=15$ символов</li>
+<li>Тогда $I = k \cdot i = 3$ бит $\cdot 15$ символов $=45$ бит</li>
+</ul>
+</li>
+<li>
+<p>Объём, занимаемый одним паролем <strong>на диске</strong></p>
+<ul>
+<li>Чтобы найти его, надо перевести биты в байты (т.е. поделить число бит на 8)</li>
+<li>Получившееся число, если оно дробное, то округлить вверх, даже если по правилам математического округления это стоило бы сделать вниз.</li>
+</ul>
+</li>
+<li>
+<p>Пример:</p>
+<ul>
+<li>45 бит / 8 = 5,625 байт</li>
+<li>Округляем вверх — новое $I=6$ байт</li>
+</ul>
+</li>
+</ul>
+<p>В обратной задаче (например, дано количество байт, которое приходится на один пароль, и тоже дробное) надо смотреть на контекст, в какую сторону округлять. Но чаще всего приходится округлять вниз (например, если сказано, что на столько-то пароль выделено <strong>не более</strong> стольких-то КБайт)</p>
+<ul>
+<li>
+<p>Также в каждое условие включаются две &ldquo;ритуальные&rdquo; фразы:</p>
+<ul>
+<li>Каждый такой пароль в компьютерной системе записывается минимально возможным и одинаковым целым количеством байт</li>
+<li>При этом используется посимвольное кодирование и все символы кодируются одинаковым минимально возможным количеством бит
+По сути, всё, что я написал выше — это расшифровка этих двух фраз, которые есть почти в каждом условии заданий данного прототипа. При этом в некоторых &ldquo;альтернативных&rdquo; заданиях (например, в гробниках) составители экспериментируют в том числе и с этими правилами. Но на экзамене они довольно незыблемы и стереотипны. Это значит, что тот способ подсчёта и, зачастую, округлений, которые я описал, с очень большой вероятностью будут актуальны и на реальном экзамене. В идеале всё-таки порешать какое-то количество &ldquo;альтернативных&rdquo; заданий, чтобы учиться адаптировать этот шаблон под внезапные &ldquo;нюансы&rdquo; условия.</li>
+</ul>
+</li>
+<li>
+<p>Зная объём одного пароля, можно найти общий объём какого-то количества паролей.</p>
+</li>
+<li>
+<p>Пример:</p>
+<ul>
+<li>$L = 30$</li>
+<li>$I=6$ байт</li>
+<li>$I_{30}=L \cdot I=30\cdot 6$ байт = 180 байт</li>
+</ul>
+</li>
+</ul>
+<p>Итого полное решение исходной задачи:</p>
+<p><img src="./assets/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-03-27%20190320.png" alt=""></p>
+<p><img src="./assets/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-03-27%20190327.png" alt=""></p>
+<h2 id="пример-1">Пример</h2>
+<blockquote>
+<p>Для регистрации на сайте некоторой страны пользователю требуется придумать пароль. Длина пароля – ровно 11 символов. В качестве символов используются десятичные цифры и 12 различных букв местного алфавита, причём все буквы используются в двух начертаниях: как строчные, так и заглавные (регистр буквы имеет значение!). Под хранение каждого такого пароля на компьютере отводится минимально возможное и одинаковое целое количество байтов, при этом используется посимвольное кодирование и все символы кодируются одинаковым и минимально возможным количеством битов. Определите объём памяти в байтах, который занимает хранение 60 паролей. Решение:</p>
+</blockquote>
+<ul>
+<li>согласно условию, в пароле можно использовать 10 цифр (0..9) + 12 заглавных букв местного алфавита + 12 строчных букв, всего 10</li>
+<li>12 + 12 = 34 символа</li>
+<li>для кодирования номера одного из 34 символов нужно выделить 6 бит памяти (5 не хватает, они закодируют только 25 = 32 варианта)</li>
+<li>для хранения всех 11 символов пароля нужно 11 * 6 = 66 бит</li>
+<li>поскольку пароль должен занимать целое число байт, берем ближайшее большее (точнее, не меньшее) значение, которое кратно 8: это 72 = 9 * 8; то есть один пароль занимает 9 байт</li>
+<li>тогда 60 паролей занимают 9 * 60 = 540 байт</li>
+</ul>
+<p>Ответ: 540.</p>
+<h2 id="совет">Совет</h2>
+<p>Следить за округлением: всё вместе или по частям!</p>
+<h2 id="также-статья">Также статья</h2>
+<p><a href="https://ege-study.ru/ru/ege/materialy/informatika/polnyi-kurs-podgotovki-k-ege-po-informatike/zadanie-11/">https://ege-study.ru/ru/ege/materialy/informatika/polnyi-kurs-podgotovki-k-ege-po-informatike/zadanie-11/</a></p>
+<ul class="pa0">
+  
+</ul><ul class="pa0">
+  
+</ul>
+
+      
+    </div></article>
+</main><footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://isbur-tutorship.github.io/inf-ege/index.html" >
+    &copy;  ЕГЭ по информатике 2026 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

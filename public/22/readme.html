@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>ЕГЭ по информатике</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Задание 22
+В чём суть
+Дана таблица процессов. У каждого процесса есть свой номер (ID), есть длительность (в мс) и номера процессов, от которых они зависят. Есть также независимые процессы, которые обозначаются цифрой 0. Процесс может начаться, только если закончились все процессы, от которых он зависит. При этом независимые могут стартовать сразу же.
+Вопрос (стереотипный): за какое минимальное время все эти процессы могут завершиться?
+Вопрос (характера 2026 года): какое максимальное количество процессов может быть запущено одновременно? или: какое наибольшее количество времени могут быть запущены, скажем, 4 процесса одновременно?">
+    <meta name="generator" content="Hugo 0.169.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    <link rel="stylesheet" href="/inf-ege/ananke/css/main.02a37ad6c4e155c542d276915a0e3f83f5c7c5fec443350f6e60753f1679b7a7.css" integrity="sha256-AqN61sThVcVC0naRWg4/g/XHxf7EQzUPbmB1PxZ5t6c=" crossorigin="anonymous">
+    <script>
+  (function () {
+    "use strict";
+
+    
+    
+    function revealButtons() {
+      var buttons = document.querySelectorAll(".code-block .code-copy[hidden]");
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].hidden = false;
+      }
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", revealButtons);
+    } else {
+      revealButtons();
+    }
+
+    function flash(button) {
+      var label = button.querySelector(".code-copy-label");
+      var previous = label ? label.textContent : null;
+      button.classList.add("is-copied");
+      if (label) label.textContent = "Copied";
+      window.setTimeout(function () {
+        button.classList.remove("is-copied");
+        if (label && previous !== null) label.textContent = previous;
+      }, 2000);
+    }
+
+    function legacyCopy(text) {
+      var area = document.createElement("textarea");
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "absolute";
+      area.style.left = "-9999px";
+      document.body.appendChild(area);
+      area.select();
+      var ok = false;
+      try {
+        ok = document.execCommand("copy");
+      } catch (e) {
+        ok = false;
+      }
+      document.body.removeChild(area);
+      return ok;
+    }
+
+    function copyFrom(button) {
+      var container = button.closest(".code-block");
+      if (!container) return;
+      var pre = container.querySelector("pre");
+      if (!pre) return;
+      var source = pre.querySelector("code") || pre;
+      var text = source.innerText;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function () { flash(button); },
+          function () { if (legacyCopy(text)) flash(button); }
+        );
+      } else if (legacyCopy(text)) {
+        flash(button);
+      }
+    }
+
+    document.addEventListener("click", function (event) {
+      var button = event.target.closest(".code-copy");
+      if (button) copyFrom(button);
+    });
+  })();
+</script>
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://isbur-tutorship.github.io/inf-ege/22/readme.html">
+    
+
+    
+    
+    <meta property="og:url" content="https://isbur-tutorship.github.io/inf-ege/22/readme.html">
+	<meta property="og:site_name" content="ЕГЭ по информатике">
+	<meta property="og:title" content="ЕГЭ по информатике">
+	<meta property="og:description" content="Задание 22 В чём суть Дана таблица процессов. У каждого процесса есть свой номер (ID), есть длительность (в мс) и номера процессов, от которых они зависят. Есть также независимые процессы, которые обозначаются цифрой 0. Процесс может начаться, только если закончились все процессы, от которых он зависит. При этом независимые могут стартовать сразу же.
+Вопрос (стереотипный): за какое минимальное время все эти процессы могут завершиться?
+Вопрос (характера 2026 года): какое максимальное количество процессов может быть запущено одновременно? или: какое наибольшее количество времени могут быть запущены, скажем, 4 процесса одновременно?">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="22">
+
+	<meta itemprop="name" content="ЕГЭ по информатике">
+	<meta itemprop="description" content="Задание 22 В чём суть Дана таблица процессов. У каждого процесса есть свой номер (ID), есть длительность (в мс) и номера процессов, от которых они зависят. Есть также независимые процессы, которые обозначаются цифрой 0. Процесс может начаться, только если закончились все процессы, от которых он зависит. При этом независимые могут стартовать сразу же.
+Вопрос (стереотипный): за какое минимальное время все эти процессы могут завершиться?
+Вопрос (характера 2026 года): какое максимальное количество процессов может быть запущено одновременно? или: какое наибольшее количество времени могут быть запущены, скажем, 4 процесса одновременно?">
+	<meta itemprop="wordCount" content="770">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="ЕГЭ по информатике">
+	<meta name="twitter:description" content="Задание 22 В чём суть Дана таблица процессов. У каждого процесса есть свой номер (ID), есть длительность (в мс) и номера процессов, от которых они зависят. Есть также независимые процессы, которые обозначаются цифрой 0. Процесс может начаться, только если закончились все процессы, от которых он зависит. При этом независимые могут стартовать сразу же.
+Вопрос (стереотипный): за какое минимальное время все эти процессы могут завершиться?
+Вопрос (характера 2026 года): какое максимальное количество процессов может быть запущено одновременно? или: какое наибольшее количество времени могут быть запущены, скажем, 4 процесса одновременно?">
+
+      
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production is-page is-page page-README">
+   
+  
+
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/inf-ege/index.html" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        ЕГЭ по информатике
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+<main class="pb7" role="main">
+  
+
+  <article class="page-README flex-l mw7 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100"><aside class="instapaper_ignoref b helvetica tracked ttu">
+    <a class="link dim" href="https://isbur-tutorship.github.io/inf-ege/22/index.html">22s</a>
+  </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1"></h1>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-100-l"><h1 id="задание-22">Задание 22</h1>
+<h2 id="в-чём-суть">В чём суть</h2>
+<p>Дана таблица процессов. У каждого процесса есть свой номер (ID), есть длительность (в мс) и номера процессов, от которых они зависят. Есть также независимые процессы, которые обозначаются цифрой 0. Процесс может начаться, только если закончились все процессы, от которых он зависит. При этом независимые могут стартовать сразу же.</p>
+<p>Вопрос (стереотипный): за какое минимальное время все эти процессы могут завершиться?</p>
+<p>Вопрос (характера 2026 года): какое максимальное количество процессов может быть запущено одновременно? или: какое наибольшее количество времени могут быть запущены, скажем, 4 процесса одновременно?</p>
+<h2 id="пример">Пример</h2>
+<p>kompege-21906 (досрок 2026 года)</p>
+<p>Пример файла:</p>
+<p><img src="./assets/6b06e6e3d0ad834762313f172e87ade4_MD5.png" alt=""></p>
+<p>Для наглядности можно представить эту таблицу как граф (не вз):</p>
+<p><img src="./assets/Pasted%20image%2020260619193829.png" alt=""></p>
+<p>Кружочками обведены независимые процессы.</p>
+<p>Подготовка таблицы к рисованию диаграмм Ганта:</p>
+<p><img src="./assets/5d92f43775704fb4950d91a3cb2a2832_MD5.gif" alt=""></p>
+<p>Применим к столбцу C операцию разделения данных по столбцам:</p>
+<p><img src="./assets/bf655ded7bfd0ace4a456ecb014f25ad_MD5.gif" alt=""></p>
+<p>По шагам:</p>
+<ol>
+<li>Выделить столбец с зависимостями процессов
+<img src="./assets/Pasted%20image%2020260619201458.png" alt=""></li>
+<li>Зайти в меню &ldquo;Данные&rdquo;:
+<img src="./assets/Pasted%20image%2020260619201542.png" alt=""></li>
+<li>Найти раздел &ldquo;Работа с данными&rdquo; и кнопку &ldquo;Текст по столбцам&rdquo;, нажать на неё
+<img src="./assets/Pasted%20image%2020260619201654.png" alt=""></li>
+<li>В открывшемся окне оставляем формат данных &ldquo;с разделителями&rdquo; по умолчанию, нажимаем &ldquo;Далее&rdquo;
+<img src="./assets/Pasted%20image%2020260619201958.png" alt=""></li>
+<li>На следующем экране ищем список разделителей
+<img src="./assets/Pasted%20image%2020260619202124.png" alt=""></li>
+<li>Отмечаем &ldquo;точка с запятой&rdquo; (&ldquo;знак табуляции&rdquo; можно не трогать, он нам не мешает), после чего нажимаем &ldquo;Готово&rdquo;
+<img src="./assets/Pasted%20image%2020260619202238.png" alt=""></li>
+<li>Собственно, готово:
+<img src="./assets/Pasted%20image%2020260619202313.png" alt=""></li>
+</ol>
+<p>Те ячейки, которые содержали в себе перечисление нескольких процессов-зависимостей через символ точки с запятой, теперь распределились по соседним столбцам справа. В данном случае всего четыре столбца получается (по максимальному числу процессов-зависимостей).</p>
+<p>Заводим фейковый нулевой процесс:</p>
+<p><img src="./assets/16938b6657988b67e76f34e8a9707d89_MD5.png" alt=""></p>
+<p>Бахнем четыре дополнительных столбца (столько, сколько получилось столбцов после разделения столбца C по столбцам):</p>
+<p><img src="./assets/ec74abe102f1757f7b555e13bd003a14_MD5.png" alt=""></p>
+<p>Проплатим:</p>
+<p><img src="./assets/e94f1700ec1a4d381077ed476f8ff0c2_MD5.png" alt=""></p>
+<p>Формула:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <pre tabindex="0"><code class="language-excel" data-lang="excel">=ЕСЛИОШИБКА(ВПР(C2;$A$2:$I$26;9);0)</code></pre>
+  </div><p>Заполним также столбец &ldquo;Время выполнения&rdquo;:</p>
+<p><img src="./assets/b46a47cb67ed4ca0a7a47a684e8f1fed_MD5.png" alt=""></p>
+<p>Формула:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <pre tabindex="0"><code class="language-excel" data-lang="excel">=МАКС(F2:H2)+B2</code></pre>
+  </div><h2 id="решение-через-python-a">Решение через Python A</h2>
+<p>Сохранить как текстовый файл с разделителями — табуляциями.</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># kompege-29352</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>A <span style="color:#f92672">=</span> [s<span style="color:#f92672">.</span>split() <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> open(<span style="color:#e6db74">&#34;22_29352.txt&#34;</span>)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> A[<span style="color:#ae81ff">1</span>:]:
+</span></span><span style="display:flex;"><span>    s[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> int(s[<span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;&#34;&#39;</span> <span style="color:#f92672">in</span> s[<span style="color:#ae81ff">2</span>]:
+</span></span><span style="display:flex;"><span>        s[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> [int(x) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> s[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;&#34;&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;;&#34;</span>)]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        s[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> [int(s[<span style="color:#ae81ff">2</span>])]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">f</span>(n):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> A[n][<span style="color:#ae81ff">2</span>] <span style="color:#f92672">==</span> [<span style="color:#ae81ff">0</span>]:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> A[n][<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> max(f(x) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> A[n][<span style="color:#ae81ff">2</span>]) <span style="color:#f92672">+</span> A[n][<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(max(f(i) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, len(A))))</span></span></code></pre></div>
+  </div><h2 id="решение-через-python-b">Решение через Python B</h2>
+<p>Предварительно надо заменить в файле &ldquo;;&rdquo; на &ldquo;,&rdquo;, потом сохранить как csv (в России, видимо, разделитель - &ldquo;;&rdquo;).</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">my_print</span>(A):
+</span></span><span style="display:flex;"><span>    [print(x) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> A]
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>f <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#34;22.csv&#34;</span>)
+</span></span><span style="display:flex;"><span>A <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>readlines()
+</span></span><span style="display:flex;"><span>A <span style="color:#f92672">=</span> [s[:<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>] <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> A]
+</span></span><span style="display:flex;"><span>A <span style="color:#f92672">=</span> [s<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;;&#34;</span>) <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> A]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> l <span style="color:#f92672">in</span> A:
+</span></span><span style="display:flex;"><span>    l[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> int(l[<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>    l[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> int(l[<span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;,&#34;</span> <span style="color:#f92672">in</span> l[<span style="color:#ae81ff">2</span>]:
+</span></span><span style="display:flex;"><span>        l[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> [int(x) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> l[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;,&#34;</span>)]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        l[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> [int(l[<span style="color:#ae81ff">2</span>])]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> l <span style="color:#f92672">in</span> A:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> l[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">==</span> [<span style="color:#ae81ff">0</span>]:
+</span></span><span style="display:flex;"><span>        l<span style="color:#f92672">.</span>append(l[<span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        l<span style="color:#f92672">.</span>append(
+</span></span><span style="display:flex;"><span>        	max([A[proc<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">3</span>] <span style="color:#66d9ef">for</span> proc <span style="color:#f92672">in</span> l[<span style="color:#ae81ff">2</span>]] <span style="color:#f92672">+</span> l[<span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>print(max(x[<span style="color:#ae81ff">3</span>] <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> A))</span></span></code></pre></div>
+  </div><h2 id="максимальная-длительность-пяти-процессов-одновременно">Максимальная длительность пяти процессов одновременно</h2>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># kompege-27775</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> dataclasses <span style="color:#f92672">import</span> dataclass
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> itertools <span style="color:#f92672">import</span> product
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@dataclass</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Process</span>:
+</span></span><span style="display:flex;"><span>    duration: int
+</span></span><span style="display:flex;"><span>    deps: list[int]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>A <span style="color:#f92672">=</span> [s<span style="color:#f92672">.</span>split() <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> open(<span style="color:#e6db74">&#34;22_27775.txt&#34;</span>)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>proc <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> A[<span style="color:#ae81ff">1</span>:]:
+</span></span><span style="display:flex;"><span>    proc[int(s[<span style="color:#ae81ff">0</span>])] <span style="color:#f92672">=</span> Process(
+</span></span><span style="display:flex;"><span>        duration <span style="color:#f92672">=</span> int(s[<span style="color:#ae81ff">1</span>]),
+</span></span><span style="display:flex;"><span>        deps <span style="color:#f92672">=</span> [int(x) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> s[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;&#34;&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;;&#34;</span>)]
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">f</span>(n):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> proc[n]<span style="color:#f92672">.</span>deps <span style="color:#f92672">==</span> [<span style="color:#ae81ff">0</span>]:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> proc[n]<span style="color:#f92672">.</span>duration <span style="color:#f92672">+</span> displacement[n]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> max(f(x) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> proc[n]<span style="color:#f92672">.</span>deps) <span style="color:#f92672">+</span> proc[n]<span style="color:#f92672">.</span>duration
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>L <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> d <span style="color:#f92672">in</span> product(range(<span style="color:#ae81ff">30</span>), repeat <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>):
+</span></span><span style="display:flex;"><span>    displacement <span style="color:#f92672">=</span> dict(zip(
+</span></span><span style="display:flex;"><span>        [<span style="color:#ae81ff">101</span>, <span style="color:#ae81ff">102</span>, <span style="color:#ae81ff">109</span>, <span style="color:#ae81ff">110</span>],
+</span></span><span style="display:flex;"><span>        [<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> list(d)
+</span></span><span style="display:flex;"><span>    ))
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    T <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i, p <span style="color:#f92672">in</span> proc<span style="color:#f92672">.</span>items():
+</span></span><span style="display:flex;"><span>        finish <span style="color:#f92672">=</span> f(i)
+</span></span><span style="display:flex;"><span>        start <span style="color:#f92672">=</span> finish <span style="color:#f92672">-</span> p<span style="color:#f92672">.</span>duration
+</span></span><span style="display:flex;"><span>        T[start] <span style="color:#f92672">=</span> T<span style="color:#f92672">.</span>get(start, <span style="color:#ae81ff">0</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        T[finish] <span style="color:#f92672">=</span> T<span style="color:#f92672">.</span>get(finish, <span style="color:#ae81ff">0</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    times <span style="color:#f92672">=</span> sorted(T<span style="color:#f92672">.</span>keys())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    n <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    start <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> t <span style="color:#f92672">in</span> times:
+</span></span><span style="display:flex;"><span>        old <span style="color:#f92672">=</span> n
+</span></span><span style="display:flex;"><span>        n <span style="color:#f92672">+=</span> T[t]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> old <span style="color:#f92672">!=</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">and</span> n <span style="color:#f92672">==</span> <span style="color:#ae81ff">5</span>:
+</span></span><span style="display:flex;"><span>            start <span style="color:#f92672">=</span> t
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> old <span style="color:#f92672">==</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">and</span> n <span style="color:#f92672">!=</span> <span style="color:#ae81ff">5</span>:
+</span></span><span style="display:flex;"><span>            L<span style="color:#f92672">.</span>append(t <span style="color:#f92672">-</span> start)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(max(L))</span></span></code></pre></div>
+  </div><h2 id="см-также">См. также</h2>
+<p><a href="https://itchief.ru/python/ege-22">https://itchief.ru/python/ege-22</a></p>
+<h2 id="архив">Архив</h2>
+<h3 id="ручное-построение-диаграммы-ганта">Ручное построение диаграммы Ганта</h3>
+<p>Пример файла:</p>
+<p><img src="./assets/6b06e6e3d0ad834762313f172e87ade4_MD5.png" alt=""></p>
+<p>Подготовка таблицы к рисованию диаграмм Ганта:</p>
+<p><img src="./assets/5d92f43775704fb4950d91a3cb2a2832_MD5.gif" alt=""></p>
+<p>Рисуем диаграмму для процесса (количество единиц совпадает с длительностью процесса)</p>
+<p><img src="./assets/96a7e1494824e26c462f8e26b48bb9c6_MD5.gif" alt=""></p>
+<p>Вот что должно получиться после проставления длительностей независимых процессов:</p>
+<p><img src="./assets/6410e61fa509965df6ba046af2318ecb_MD5.png" alt=""></p>
+<p>Видим, что этим способом эта задача решается очень неудобно:</p>
+<p><img src="./assets/a816507ac940508afdd52a3129752979_MD5.png" alt=""></p>
+<h3 id="ручное-вычисление-минимального-времени-выполнения-всех-процессов">Ручное вычисление минимального времени выполнения всех процессов</h3>
+<p>Проставляем время завершения для независимых процессов:</p>
+<p><img src="./assets/b7eeee13ab28ac92d04c331804e40984_MD5.png" alt=""></p>
+<p>Далее заполняем таблице по следующему принципу: берём какой-нибудь зависимый процесс. Если время окончания процесса, от которого наш процесс зависит, известно, то мы к нему просто прибавляем время выполнения текущего процесса и проставляем в колонку &ldquo;время выполнения&rdquo;. Если процесс зависит от нескольких других процессов, то среди них мы выбираем тот, у которого время выполнения максимально. Наконец, если мы пока не знаем время выполнения процессов, от которых мы зависим, то мы переходим к строчке с этим процессом и пытаемся применить тот же алгоритм — при необходимости, спускаемся так несколько раз, до тех пор, пока текущий процесс не станет зависеть от известного/независимого.</p>
+<p>Результат ручного счёта:</p>
+<p><img src="./assets/08bed135fbedba1f34f5818bd055f665_MD5.png" alt=""></p>
+<h3 id="вычисление-минимального-времени-выполнения-всех-процессов-при-помощи-формулы-впр-с-фейковым-нулевым-процессом">Вычисление минимального времени выполнения всех процессов при помощи формулы ВПР с фейковым нулевым процессом</h3>
+<p>Заводим фейковый нулевой процесс:</p>
+<p><img src="./assets/16938b6657988b67e76f34e8a9707d89_MD5.png" alt=""></p>
+<p>Бахнем четыре дополнительных столбца (столько, сколько получилось столбцов после разделения столбца C по столбцам):</p>
+<p><img src="./assets/ec74abe102f1757f7b555e13bd003a14_MD5.png" alt=""></p>
+<p>Проплатим:</p>
+<p><img src="./assets/e94f1700ec1a4d381077ed476f8ff0c2_MD5.png" alt=""></p>
+<p>Заполним также столбец &ldquo;Время выполнения&rdquo;:</p>
+<p><img src="./assets/b46a47cb67ed4ca0a7a47a684e8f1fed_MD5.png" alt=""></p>
+<ul class="pa0">
+  
+</ul><ul class="pa0">
+  
+</ul>
+
+      
+    </div></article>
+</main><footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://isbur-tutorship.github.io/inf-ege/index.html" >
+    &copy;  ЕГЭ по информатике 2026 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

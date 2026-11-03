@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>ЕГЭ по информатике</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Задание 2
+Предварительная теория
+Обозначения логических операций
+
+	
+			
+					Значок
+					Логическая операция
+			
+	
+	
+			
+					¬
+					НЕ
+			
+			
+					∧
+					И
+			
+			
+					∨
+					ИЛИ
+			
+			
+					→
+					СЛЕДОВАТЕЛЬНО (ИМПЛИКАЦИЯ)
+			
+			
+					≡
+					РАВНОСИЛЬНО
+			
+	
+
+Таблицы истинности логических функций
+Логическое НЕ (¬A)
+
+	
+			
+					A
+					¬A
+			
+	
+	
+			
+					0
+					1
+			
+			
+					1
+					0
+			
+	
+
+Логическое И (A ∧ B)
+
+	
+			
+					A
+					B
+					A ∧ B
+			
+	
+	
+			
+					0
+					0
+					0
+			
+			
+					0
+					1
+					0
+			
+			
+					1
+					0
+					0
+			
+			
+					1
+					1
+					1
+			
+	
+
+Логическое ИЛИ (A ∨ B)
+
+	
+			
+					A
+					B
+					A ∨ B
+			
+	
+	
+			
+					0
+					0
+					0
+			
+			
+					0
+					1
+					1
+			
+			
+					1
+					0
+					1
+			
+			
+					1
+					1
+					1
+			
+	
+
+СЛЕДОВАТЕЛЬНО (A → B)
+
+	
+			
+					A
+					B
+					A → B
+					Пример
+			
+	
+	
+			
+					0
+					0
+					1
+					Если крокодилы действительно фиолетовые, тогда я готов съесть свой галстук!
+			
+			
+					0
+					1
+					1
+					Если крокодилы фиолетовые, то Земля круглая.
+			
+			
+					1
+					0
+					0
+					Согласно данным Росстата, средняя зарплата населения выросла. Значит, они стали жить лучше. (Ничего, что инфляция десятки процентов?)
+			
+			
+					1
+					1
+					1
+					Если Ваня человек, то Ваня смертен.
+			
+	
+
+РАВНОСИЛЬНО (A ≡ B)
+
+	
+			
+					A
+					B
+					A ≡ B
+			
+	
+	
+			
+					0
+					0
+					1
+			
+			
+					0
+					1
+					0
+			
+			
+					1
+					0
+					0
+			
+			
+					1
+					1
+					1
+			
+	
+
+Эквиваленты записи логических операций в математике и в Python
+
+	
+			
+					Математическая запись
+					Запись в Python
+			
+	
+	
+			
+					¬A
+					not A
+			
+			
+					A ∧ B
+					A and B
+			
+			
+					A ∨ B
+					A or B
+			
+			
+					A → B
+					A &lt;= B
+			
+			
+					A ≡ B
+					A == B
+			
+	
+
+Как решать
+Пример задания:">
+    <meta name="generator" content="Hugo 0.169.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    <link rel="stylesheet" href="/inf-ege/ananke/css/main.02a37ad6c4e155c542d276915a0e3f83f5c7c5fec443350f6e60753f1679b7a7.css" integrity="sha256-AqN61sThVcVC0naRWg4/g/XHxf7EQzUPbmB1PxZ5t6c=" crossorigin="anonymous">
+    <script>
+  (function () {
+    "use strict";
+
+    
+    
+    function revealButtons() {
+      var buttons = document.querySelectorAll(".code-block .code-copy[hidden]");
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].hidden = false;
+      }
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", revealButtons);
+    } else {
+      revealButtons();
+    }
+
+    function flash(button) {
+      var label = button.querySelector(".code-copy-label");
+      var previous = label ? label.textContent : null;
+      button.classList.add("is-copied");
+      if (label) label.textContent = "Copied";
+      window.setTimeout(function () {
+        button.classList.remove("is-copied");
+        if (label && previous !== null) label.textContent = previous;
+      }, 2000);
+    }
+
+    function legacyCopy(text) {
+      var area = document.createElement("textarea");
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "absolute";
+      area.style.left = "-9999px";
+      document.body.appendChild(area);
+      area.select();
+      var ok = false;
+      try {
+        ok = document.execCommand("copy");
+      } catch (e) {
+        ok = false;
+      }
+      document.body.removeChild(area);
+      return ok;
+    }
+
+    function copyFrom(button) {
+      var container = button.closest(".code-block");
+      if (!container) return;
+      var pre = container.querySelector("pre");
+      if (!pre) return;
+      var source = pre.querySelector("code") || pre;
+      var text = source.innerText;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function () { flash(button); },
+          function () { if (legacyCopy(text)) flash(button); }
+        );
+      } else if (legacyCopy(text)) {
+        flash(button);
+      }
+    }
+
+    document.addEventListener("click", function (event) {
+      var button = event.target.closest(".code-copy");
+      if (button) copyFrom(button);
+    });
+  })();
+</script>
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://isbur-tutorship.github.io/inf-ege/02/readme.html">
+    
+
+    
+    
+    <meta property="og:url" content="https://isbur-tutorship.github.io/inf-ege/02/readme.html">
+	<meta property="og:site_name" content="ЕГЭ по информатике">
+	<meta property="og:title" content="ЕГЭ по информатике">
+	<meta property="og:description" content="Задание 2 Предварительная теория Обозначения логических операций Значок Логическая операция ¬ НЕ ∧ И ∨ ИЛИ → СЛЕДОВАТЕЛЬНО (ИМПЛИКАЦИЯ) ≡ РАВНОСИЛЬНО Таблицы истинности логических функций Логическое НЕ (¬A) A ¬A 0 1 1 0 Логическое И (A ∧ B) A B A ∧ B 0 0 0 0 1 0 1 0 0 1 1 1 Логическое ИЛИ (A ∨ B) A B A ∨ B 0 0 0 0 1 1 1 0 1 1 1 1 СЛЕДОВАТЕЛЬНО (A → B) A B A → B Пример 0 0 1 Если крокодилы действительно фиолетовые, тогда я готов съесть свой галстук! 0 1 1 Если крокодилы фиолетовые, то Земля круглая. 1 0 0 Согласно данным Росстата, средняя зарплата населения выросла. Значит, они стали жить лучше. (Ничего, что инфляция десятки процентов?) 1 1 1 Если Ваня человек, то Ваня смертен. РАВНОСИЛЬНО (A ≡ B) A B A ≡ B 0 0 1 0 1 0 1 0 0 1 1 1 Эквиваленты записи логических операций в математике и в Python Математическая запись Запись в Python ¬A not A A ∧ B A and B A ∨ B A or B A → B A &lt;= B A ≡ B A == B Как решать Пример задания:">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="02">
+
+	<meta itemprop="name" content="ЕГЭ по информатике">
+	<meta itemprop="description" content="Задание 2 Предварительная теория Обозначения логических операций Значок Логическая операция ¬ НЕ ∧ И ∨ ИЛИ → СЛЕДОВАТЕЛЬНО (ИМПЛИКАЦИЯ) ≡ РАВНОСИЛЬНО Таблицы истинности логических функций Логическое НЕ (¬A) A ¬A 0 1 1 0 Логическое И (A ∧ B) A B A ∧ B 0 0 0 0 1 0 1 0 0 1 1 1 Логическое ИЛИ (A ∨ B) A B A ∨ B 0 0 0 0 1 1 1 0 1 1 1 1 СЛЕДОВАТЕЛЬНО (A → B) A B A → B Пример 0 0 1 Если крокодилы действительно фиолетовые, тогда я готов съесть свой галстук! 0 1 1 Если крокодилы фиолетовые, то Земля круглая. 1 0 0 Согласно данным Росстата, средняя зарплата населения выросла. Значит, они стали жить лучше. (Ничего, что инфляция десятки процентов?) 1 1 1 Если Ваня человек, то Ваня смертен. РАВНОСИЛЬНО (A ≡ B) A B A ≡ B 0 0 1 0 1 0 1 0 0 1 1 1 Эквиваленты записи логических операций в математике и в Python Математическая запись Запись в Python ¬A not A A ∧ B A and B A ∨ B A or B A → B A &lt;= B A ≡ B A == B Как решать Пример задания:">
+	<meta itemprop="wordCount" content="571">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="ЕГЭ по информатике">
+	<meta name="twitter:description" content="Задание 2 Предварительная теория Обозначения логических операций Значок Логическая операция ¬ НЕ ∧ И ∨ ИЛИ → СЛЕДОВАТЕЛЬНО (ИМПЛИКАЦИЯ) ≡ РАВНОСИЛЬНО Таблицы истинности логических функций Логическое НЕ (¬A) A ¬A 0 1 1 0 Логическое И (A ∧ B) A B A ∧ B 0 0 0 0 1 0 1 0 0 1 1 1 Логическое ИЛИ (A ∨ B) A B A ∨ B 0 0 0 0 1 1 1 0 1 1 1 1 СЛЕДОВАТЕЛЬНО (A → B) A B A → B Пример 0 0 1 Если крокодилы действительно фиолетовые, тогда я готов съесть свой галстук! 0 1 1 Если крокодилы фиолетовые, то Земля круглая. 1 0 0 Согласно данным Росстата, средняя зарплата населения выросла. Значит, они стали жить лучше. (Ничего, что инфляция десятки процентов?) 1 1 1 Если Ваня человек, то Ваня смертен. РАВНОСИЛЬНО (A ≡ B) A B A ≡ B 0 0 1 0 1 0 1 0 0 1 1 1 Эквиваленты записи логических операций в математике и в Python Математическая запись Запись в Python ¬A not A A ∧ B A and B A ∨ B A or B A → B A &lt;= B A ≡ B A == B Как решать Пример задания:">
+
+      
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production is-page is-page page-README">
+   
+  
+
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/inf-ege/index.html" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        ЕГЭ по информатике
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+<main class="pb7" role="main">
+  
+
+  <article class="page-README flex-l mw7 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100"><aside class="instapaper_ignoref b helvetica tracked ttu">
+    <a class="link dim" href="https://isbur-tutorship.github.io/inf-ege/02/index.html">02s</a>
+  </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1"></h1>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-100-l"><h1 id="задание-2">Задание 2</h1>
+<h2 id="предварительная-теория">Предварительная теория</h2>
+<h3 id="обозначения-логических-операций">Обозначения логических операций</h3>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: center">Значок</th>
+					<th style="text-align: center">Логическая операция</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: center">¬</td>
+					<td style="text-align: center">НЕ</td>
+			</tr>
+			<tr>
+					<td style="text-align: center">∧</td>
+					<td style="text-align: center">И</td>
+			</tr>
+			<tr>
+					<td style="text-align: center">∨</td>
+					<td style="text-align: center">ИЛИ</td>
+			</tr>
+			<tr>
+					<td style="text-align: center">→</td>
+					<td style="text-align: center">СЛЕДОВАТЕЛЬНО (ИМПЛИКАЦИЯ)</td>
+			</tr>
+			<tr>
+					<td style="text-align: center">≡</td>
+					<td style="text-align: center">РАВНОСИЛЬНО</td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="таблицы-истинности-логических-функций">Таблицы истинности логических функций</h3>
+<h4 id="логическое-не-a">Логическое НЕ (¬A)</h4>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: center">A</th>
+					<th style="text-align: center">¬A</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: center">0</td>
+					<td style="text-align: center">1</td>
+			</tr>
+			<tr>
+					<td style="text-align: center">1</td>
+					<td style="text-align: center">0</td>
+			</tr>
+	</tbody>
+</table>
+<h4 id="логическое-и-a--b">Логическое И (A ∧ B)</h4>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: center">A</th>
+					<th style="text-align: center">B</th>
+					<th style="text-align: center">A ∧ B</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: center">0</td>
+					<td style="text-align: center">0</td>
+					<td style="text-align: center">0</td>
+			</tr>
+			<tr>
+					<td style="text-align: center">0</td>
+					<td style="text-align: center">1</td>
+					<td style="text-align: center">0</td>
+			</tr>
+			<tr>
+					<td style="text-align: center">1</td>
+					<td style="text-align: center">0</td>
+					<td style="text-align: center">0</td>
+			</tr>
+			<tr>
+					<td style="text-align: center">1</td>
+					<td style="text-align: center">1</td>
+					<td style="text-align: center">1</td>
+			</tr>
+	</tbody>
+</table>
+<h4 id="логическое-или-a--b">Логическое ИЛИ (A ∨ B)</h4>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: center">A</th>
+					<th style="text-align: center">B</th>
+					<th style="text-align: center">A ∨ B</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: center">0</td>
+					<td style="text-align: center">0</td>
+					<td style="text-align: center">0</td>
+			</tr>
+			<tr>
+					<td style="text-align: center">0</td>
+					<td style="text-align: center">1</td>
+					<td style="text-align: center">1</td>
+			</tr>
+			<tr>
+					<td style="text-align: center">1</td>
+					<td style="text-align: center">0</td>
+					<td style="text-align: center">1</td>
+			</tr>
+			<tr>
+					<td style="text-align: center">1</td>
+					<td style="text-align: center">1</td>
+					<td style="text-align: center">1</td>
+			</tr>
+	</tbody>
+</table>
+<h4 id="следовательно-ab">СЛЕДОВАТЕЛЬНО (A → B)</h4>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: center">A</th>
+					<th style="text-align: center">B</th>
+					<th style="text-align: center">A → B</th>
+					<th style="text-align: center">Пример</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: center">0</td>
+					<td style="text-align: center">0</td>
+					<td style="text-align: center">1</td>
+					<td style="text-align: center">Если крокодилы действительно фиолетовые, тогда я готов съесть свой галстук!</td>
+			</tr>
+			<tr>
+					<td style="text-align: center">0</td>
+					<td style="text-align: center">1</td>
+					<td style="text-align: center">1</td>
+					<td style="text-align: center">Если крокодилы фиолетовые, то Земля круглая.</td>
+			</tr>
+			<tr>
+					<td style="text-align: center">1</td>
+					<td style="text-align: center">0</td>
+					<td style="text-align: center">0</td>
+					<td style="text-align: center">Согласно данным Росстата, средняя зарплата населения выросла. Значит, они стали жить лучше. (Ничего, что инфляция десятки процентов?)</td>
+			</tr>
+			<tr>
+					<td style="text-align: center">1</td>
+					<td style="text-align: center">1</td>
+					<td style="text-align: center">1</td>
+					<td style="text-align: center">Если Ваня человек, то Ваня смертен.</td>
+			</tr>
+	</tbody>
+</table>
+<h4 id="равносильно-a--b">РАВНОСИЛЬНО (A ≡ B)</h4>
+<table>
+	<thead>
+			<tr>
+					<th>A</th>
+					<th>B</th>
+					<th>A ≡ B</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>0</td>
+					<td>0</td>
+					<td>1</td>
+			</tr>
+			<tr>
+					<td>0</td>
+					<td>1</td>
+					<td>0</td>
+			</tr>
+			<tr>
+					<td>1</td>
+					<td>0</td>
+					<td>0</td>
+			</tr>
+			<tr>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="эквиваленты-записи-логических-операций-в-математике-и-в-python">Эквиваленты записи логических операций в математике и в Python</h3>
+<table>
+	<thead>
+			<tr>
+					<th>Математическая запись</th>
+					<th>Запись в Python</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>¬A</td>
+					<td><code>not A</code></td>
+			</tr>
+			<tr>
+					<td>A ∧ B</td>
+					<td>A and B</td>
+			</tr>
+			<tr>
+					<td>A ∨ B</td>
+					<td>A or B</td>
+			</tr>
+			<tr>
+					<td>A → B</td>
+					<td>A &lt;= B</td>
+			</tr>
+			<tr>
+					<td>A ≡ B</td>
+					<td>A == B</td>
+			</tr>
+	</tbody>
+</table>
+<h2 id="как-решать">Как решать</h2>
+<p>Пример задания:</p>
+<blockquote>
+<p>Логическая функция F задаётся логическим выражением <em>y ∧ (x ∨ z) ∨ ¬(y ∨ z) ∨ w</em>. На рисунке приведён частично заполненный фрагмент таблицы истинности функции F, содержащий неповторяющиеся строки. Определите, какому столбцу таблицы истинности соответствует каждая из переменных w, x, y, z.</p>
+</blockquote>
+<table>
+	<thead>
+			<tr>
+					<th>?</th>
+					<th>?</th>
+					<th>?</th>
+					<th>?</th>
+					<th>F</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>1</td>
+					<td></td>
+					<td>0</td>
+					<td>1</td>
+					<td>0</td>
+			</tr>
+			<tr>
+					<td></td>
+					<td>1</td>
+					<td>0</td>
+					<td></td>
+					<td>0</td>
+			</tr>
+			<tr>
+					<td>0</td>
+					<td>0</td>
+					<td></td>
+					<td>1</td>
+					<td>0</td>
+			</tr>
+	</tbody>
+</table>
+<blockquote>
+<p>В ответе напишите буквы w, x, y, z в том порядке, в котором идут соответствующие им столбцы. Буквы в ответе пишите подряд, никаких разделителей между буквами ставить не нужно.</p>
+</blockquote>
+<p>Напишем программу на Python (<a href="https://t.me/televoliks">Е. Барджахаров</a>):</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># y ∧ (x ∨ z) ∨ ¬(y ∨ z) ∨ w</span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;x y z w&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> y <span style="color:#f92672">in</span> <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> z <span style="color:#f92672">in</span> <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> w <span style="color:#f92672">in</span> <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (y <span style="color:#f92672">and</span> (x <span style="color:#f92672">or</span> z) <span style="color:#f92672">or</span> (<span style="color:#f92672">not</span> (y <span style="color:#f92672">or</span> z)) <span style="color:#f92672">or</span> w) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>                    print(x, y, z, w)</span></span></code></pre></div>
+  </div><p>Потренироваться составлять такие программы, если у вам пока не до конца понятны нюансы синтаксиса Python, можно в блочном редакторе: <a href="https://blockly.games/turtle?lang=ru&amp;level=10#9367xv">https://blockly.games/turtle?lang=ru&amp;level=10#9367xv</a></p>
+<p>Эта программа выдаёт следующую таблицу:</p>
+<table>
+	<thead>
+			<tr>
+					<th>x</th>
+					<th>y</th>
+					<th>z</th>
+					<th>w</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>0</td>
+					<td>0</td>
+					<td>1</td>
+					<td>0</td>
+			</tr>
+			<tr>
+					<td>0</td>
+					<td>1</td>
+					<td>0</td>
+					<td>0</td>
+			</tr>
+			<tr>
+					<td>1</td>
+					<td>0</td>
+					<td>1</td>
+					<td>0</td>
+			</tr>
+	</tbody>
+</table>
+<p>Её можно вырезать при помощи клавиши PrtSc или инструмента &ldquo;Ножницы&rdquo; и вставить в Paint, а дальше заняться следующим: по мере открытия новой информации о задаче выделяем целый столбец или строку, меняем их местами с другими столбцами/строками, так получается красиво и наглядно.</p>
+<p>Обратим внимание, что в исходной таблице единицы есть во всех столбцах, кроме третьего, а в полученной из программы таблицы есть столбец, состоящий из одних только нулей. Значит, столбец w — третий, поменяем третий и четвёртый столбцы местами:</p>
+<table>
+	<thead>
+			<tr>
+					<th>x</th>
+					<th>y</th>
+					<th>w</th>
+					<th>z</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>1</td>
+			</tr>
+			<tr>
+					<td>0</td>
+					<td>1</td>
+					<td>0</td>
+					<td>0</td>
+			</tr>
+			<tr>
+					<td>1</td>
+					<td>0</td>
+					<td>0</td>
+					<td>1</td>
+			</tr>
+	</tbody>
+</table>
+<p>Поменяем местами первую и третью строчки, просто &ldquo;патамушта&rdquo; (tip: так мы добьёмся идеального совпадения с исходной таблицей):</p>
+<table>
+	<thead>
+			<tr>
+					<th>x</th>
+					<th>y</th>
+					<th>w</th>
+					<th>z</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>1</td>
+					<td>0</td>
+					<td>0</td>
+					<td>1</td>
+			</tr>
+			<tr>
+					<td>0</td>
+					<td>1</td>
+					<td>0</td>
+					<td>0</td>
+			</tr>
+			<tr>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>1</td>
+			</tr>
+			<tr>
+					<td>О, значит,</td>
+					<td></td>
+					<td></td>
+					<td></td>
+			</tr>
+	</tbody>
+</table>
+<p><strong>Ответ:</strong> xywz.</p>
+<h3 id="совет">Совет</h3>
+<p>Педантично расставляем скобки при использовании <code>&lt;=</code> вместо импликации, ибо может получиться &ldquo;что-то не то&rdquo;:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&lt;=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;</span> (<span style="color:#ae81ff">3</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">&lt;=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">False</span></span></span></code></pre></div>
+  </div><h2 id="как-готовиться">Как готовиться</h2>
+<ol>
+<li>Флеш-карточки для запоминания обозначений логических операций и их эквивалентов в Python:
+<a href="https://wayground.com/join?gc=26825174&amp;autostart=true">https://wayground.com/join?gc=26825174&amp;autostart=true</a></li>
+</ol>
+<ul class="pa0">
+  
+</ul><ul class="pa0">
+  
+</ul>
+
+      
+    </div></article>
+</main><footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://isbur-tutorship.github.io/inf-ege/index.html" >
+    &copy;  ЕГЭ по информатике 2026 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

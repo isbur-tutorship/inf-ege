@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>ЕГЭ по информатике</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="
+	
+			
+					Перевод&hellip;
+					Функция
+			
+	
+	
+			
+					&hellip;из десятичной в двоичную
+					bin(x)
+			
+			
+					&hellip;из десятичной в восьмеричную
+					oct(x)
+			
+			
+					&hellip;из десятичной в шестнадцатиричную
+					hex(x)
+			
+	
+
+Простейший пример
+
+Сколько единиц содержится в двоичной записи значения выражения: 
+$$ 4^{2020} &#43; 2^{2017} – 15? $$
+Программа на Python:
+
+    
+      Copy
+    
+    n = 4**2020 &#43; 2**2017 - 15
+n = bin(n)[2:]
+print(n.count(&#34;1&#34;))
+  Примеры самописных функций перевода:
+
+    
+      Copy
+    
+    # 10 -&gt; 13
+
+def encode(x):
+    digits = &#34;0123456789abc&#34;
+    return digits[x]
+
+def f(x):
+    if x &lt; 13:
+        return encode(x)
+    else:
+        return f(x // 13) &#43; encode(x % 13)
+
+print(f(2024))
+
+# 10 -&gt; 6
+
+def g(x):
+    if x &lt; 6:
+        return str(x)
+    else:
+        return g(x // 6) &#43; str(x % 6)
+
+print(g(2024))
+
+# 10 -&gt; 7
+
+def h(x):
+    s = &#34;&#34;
+    while x &gt; 0:
+        s = str(x % 7) &#43; s
+        x //= 7
+    return s
+
+print(h(2024))
+  Зачастую полный перевод в n-ричную систему счисления не нужен, достаточно лишь подсчитывать или суммировать отдельные числа. См. пример:">
+    <meta name="generator" content="Hugo 0.169.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    <link rel="stylesheet" href="/inf-ege/ananke/css/main.02a37ad6c4e155c542d276915a0e3f83f5c7c5fec443350f6e60753f1679b7a7.css" integrity="sha256-AqN61sThVcVC0naRWg4/g/XHxf7EQzUPbmB1PxZ5t6c=" crossorigin="anonymous">
+    <script>
+  (function () {
+    "use strict";
+
+    
+    
+    function revealButtons() {
+      var buttons = document.querySelectorAll(".code-block .code-copy[hidden]");
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].hidden = false;
+      }
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", revealButtons);
+    } else {
+      revealButtons();
+    }
+
+    function flash(button) {
+      var label = button.querySelector(".code-copy-label");
+      var previous = label ? label.textContent : null;
+      button.classList.add("is-copied");
+      if (label) label.textContent = "Copied";
+      window.setTimeout(function () {
+        button.classList.remove("is-copied");
+        if (label && previous !== null) label.textContent = previous;
+      }, 2000);
+    }
+
+    function legacyCopy(text) {
+      var area = document.createElement("textarea");
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "absolute";
+      area.style.left = "-9999px";
+      document.body.appendChild(area);
+      area.select();
+      var ok = false;
+      try {
+        ok = document.execCommand("copy");
+      } catch (e) {
+        ok = false;
+      }
+      document.body.removeChild(area);
+      return ok;
+    }
+
+    function copyFrom(button) {
+      var container = button.closest(".code-block");
+      if (!container) return;
+      var pre = container.querySelector("pre");
+      if (!pre) return;
+      var source = pre.querySelector("code") || pre;
+      var text = source.innerText;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function () { flash(button); },
+          function () { if (legacyCopy(text)) flash(button); }
+        );
+      } else if (legacyCopy(text)) {
+        flash(button);
+      }
+    }
+
+    document.addEventListener("click", function (event) {
+      var button = event.target.closest(".code-copy");
+      if (button) copyFrom(button);
+    });
+  })();
+</script>
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://isbur-tutorship.github.io/inf-ege/14/readme.html">
+    
+
+    
+    
+    <meta property="og:url" content="https://isbur-tutorship.github.io/inf-ege/14/readme.html">
+	<meta property="og:site_name" content="ЕГЭ по информатике">
+	<meta property="og:title" content="ЕГЭ по информатике">
+	<meta property="og:description" content="Перевод… Функция …из десятичной в двоичную bin(x) …из десятичной в восьмеричную oct(x) …из десятичной в шестнадцатиричную hex(x) Простейший пример Сколько единиц содержится в двоичной записи значения выражения: $$ 4^{2020} &#43; 2^{2017} – 15? $$ Программа на Python:
+Copy n = 4**2020 &#43; 2**2017 - 15 n = bin(n)[2:] print(n.count(&#34;1&#34;)) Примеры самописных функций перевода:
+Copy # 10 -&gt; 13 def encode(x): digits = &#34;0123456789abc&#34; return digits[x] def f(x): if x &lt; 13: return encode(x) else: return f(x // 13) &#43; encode(x % 13) print(f(2024)) # 10 -&gt; 6 def g(x): if x &lt; 6: return str(x) else: return g(x // 6) &#43; str(x % 6) print(g(2024)) # 10 -&gt; 7 def h(x): s = &#34;&#34; while x &gt; 0: s = str(x % 7) &#43; s x //= 7 return s print(h(2024)) Зачастую полный перевод в n-ричную систему счисления не нужен, достаточно лишь подсчитывать или суммировать отдельные числа. См. пример:">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="14">
+
+	<meta itemprop="name" content="ЕГЭ по информатике">
+	<meta itemprop="description" content="Перевод… Функция …из десятичной в двоичную bin(x) …из десятичной в восьмеричную oct(x) …из десятичной в шестнадцатиричную hex(x) Простейший пример Сколько единиц содержится в двоичной записи значения выражения: $$ 4^{2020} &#43; 2^{2017} – 15? $$ Программа на Python:
+Copy n = 4**2020 &#43; 2**2017 - 15 n = bin(n)[2:] print(n.count(&#34;1&#34;)) Примеры самописных функций перевода:
+Copy # 10 -&gt; 13 def encode(x): digits = &#34;0123456789abc&#34; return digits[x] def f(x): if x &lt; 13: return encode(x) else: return f(x // 13) &#43; encode(x % 13) print(f(2024)) # 10 -&gt; 6 def g(x): if x &lt; 6: return str(x) else: return g(x // 6) &#43; str(x % 6) print(g(2024)) # 10 -&gt; 7 def h(x): s = &#34;&#34; while x &gt; 0: s = str(x % 7) &#43; s x //= 7 return s print(h(2024)) Зачастую полный перевод в n-ричную систему счисления не нужен, достаточно лишь подсчитывать или суммировать отдельные числа. См. пример:">
+	<meta itemprop="wordCount" content="284">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="ЕГЭ по информатике">
+	<meta name="twitter:description" content="Перевод… Функция …из десятичной в двоичную bin(x) …из десятичной в восьмеричную oct(x) …из десятичной в шестнадцатиричную hex(x) Простейший пример Сколько единиц содержится в двоичной записи значения выражения: $$ 4^{2020} &#43; 2^{2017} – 15? $$ Программа на Python:
+Copy n = 4**2020 &#43; 2**2017 - 15 n = bin(n)[2:] print(n.count(&#34;1&#34;)) Примеры самописных функций перевода:
+Copy # 10 -&gt; 13 def encode(x): digits = &#34;0123456789abc&#34; return digits[x] def f(x): if x &lt; 13: return encode(x) else: return f(x // 13) &#43; encode(x % 13) print(f(2024)) # 10 -&gt; 6 def g(x): if x &lt; 6: return str(x) else: return g(x // 6) &#43; str(x % 6) print(g(2024)) # 10 -&gt; 7 def h(x): s = &#34;&#34; while x &gt; 0: s = str(x % 7) &#43; s x //= 7 return s print(h(2024)) Зачастую полный перевод в n-ричную систему счисления не нужен, достаточно лишь подсчитывать или суммировать отдельные числа. См. пример:">
+
+      
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production is-page is-page page-README">
+   
+  
+
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/inf-ege/index.html" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        ЕГЭ по информатике
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+<main class="pb7" role="main">
+  
+
+  <article class="page-README flex-l mw7 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100"><aside class="instapaper_ignoref b helvetica tracked ttu">
+    <a class="link dim" href="https://isbur-tutorship.github.io/inf-ege/14/index.html">14s</a>
+  </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1"></h1>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-100-l"><table>
+	<thead>
+			<tr>
+					<th>Перевод&hellip;</th>
+					<th>Функция</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>&hellip;из десятичной в двоичную</td>
+					<td><code>bin(x)</code></td>
+			</tr>
+			<tr>
+					<td>&hellip;из десятичной в восьмеричную</td>
+					<td><code>oct(x)</code></td>
+			</tr>
+			<tr>
+					<td>&hellip;из десятичной в шестнадцатиричную</td>
+					<td><code>hex(x)</code></td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="простейший-пример">Простейший пример</h3>
+<blockquote>
+<p>Сколько единиц содержится в двоичной записи значения выражения: </p>
+$$ 4^{2020} + 2^{2017} – 15? $$</blockquote>
+<p>Программа на Python:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>n <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">**</span><span style="color:#ae81ff">2020</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">**</span><span style="color:#ae81ff">2017</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">15</span>
+</span></span><span style="display:flex;"><span>n <span style="color:#f92672">=</span> bin(n)[<span style="color:#ae81ff">2</span>:]
+</span></span><span style="display:flex;"><span>print(n<span style="color:#f92672">.</span>count(<span style="color:#e6db74">&#34;1&#34;</span>))</span></span></code></pre></div>
+  </div><p>Примеры самописных функций перевода:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 10 -&gt; 13</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">encode</span>(x):
+</span></span><span style="display:flex;"><span>    digits <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;0123456789abc&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> digits[x]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">f</span>(x):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> x <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">13</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> encode(x)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> f(x <span style="color:#f92672">//</span> <span style="color:#ae81ff">13</span>) <span style="color:#f92672">+</span> encode(x <span style="color:#f92672">%</span> <span style="color:#ae81ff">13</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(f(<span style="color:#ae81ff">2024</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 10 -&gt; 6</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">g</span>(x):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> x <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">6</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> str(x)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> g(x <span style="color:#f92672">//</span> <span style="color:#ae81ff">6</span>) <span style="color:#f92672">+</span> str(x <span style="color:#f92672">%</span> <span style="color:#ae81ff">6</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(g(<span style="color:#ae81ff">2024</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 10 -&gt; 7</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">h</span>(x):
+</span></span><span style="display:flex;"><span>    s <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> x <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        s <span style="color:#f92672">=</span> str(x <span style="color:#f92672">%</span> <span style="color:#ae81ff">7</span>) <span style="color:#f92672">+</span> s
+</span></span><span style="display:flex;"><span>        x <span style="color:#f92672">//=</span> <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(h(<span style="color:#ae81ff">2024</span>))</span></span></code></pre></div>
+  </div><p>Зачастую полный перевод в n-ричную систему счисления не нужен, достаточно лишь подсчитывать или суммировать отдельные числа. См. пример:</p>
+<p><img src="./assets/Pasted%20image%2020260524142030.png" alt="">
+(kompege-вариант-25194722)</p>
+<p>Здесь нам понадобится самописный перевод в 11-ричную систем счисления без сохранения цифр, а только с подсчётом нулей:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3001</span>):
+</span></span><span style="display:flex;"><span>	N <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span><span style="color:#f92672">*</span><span style="color:#ae81ff">11</span><span style="color:#f92672">**</span><span style="color:#ae81ff">210</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">8</span><span style="color:#f92672">*</span><span style="color:#ae81ff">11</span><span style="color:#f92672">**</span><span style="color:#ae81ff">150</span> <span style="color:#f92672">-</span> x
+</span></span><span style="display:flex;"><span>	c <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span> N <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> N <span style="color:#f92672">%</span> <span style="color:#ae81ff">11</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>			c <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>		N <span style="color:#f92672">//=</span> <span style="color:#ae81ff">11</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> c <span style="color:#f92672">==</span> <span style="color:#ae81ff">60</span>:
+</span></span><span style="display:flex;"><span>		print(x)</span></span></code></pre></div>
+  </div><p>Строки здесь не работают, так как у нас есть цифры со значением больше 9. Это можно исправить самописной функцией <code>encode()</code>, но мы лучше воспользуемся списками.</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3001</span>):
+</span></span><span style="display:flex;"><span>    N <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span><span style="color:#f92672">*</span><span style="color:#ae81ff">11</span><span style="color:#f92672">**</span><span style="color:#ae81ff">210</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">8</span><span style="color:#f92672">*</span><span style="color:#ae81ff">11</span><span style="color:#f92672">**</span><span style="color:#ae81ff">150</span> <span style="color:#f92672">-</span> x
+</span></span><span style="display:flex;"><span>    m <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> N <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        m<span style="color:#f92672">.</span>append(N <span style="color:#f92672">%</span> <span style="color:#ae81ff">11</span>)    <span style="color:#75715e"># Не забываем, что число записано в обратном порядке.</span>
+</span></span><span style="display:flex;"><span>                            <span style="color:#75715e"># В этой задаче это не критично, но может быть критично в пятом, к примеру</span>
+</span></span><span style="display:flex;"><span>        N <span style="color:#f92672">//=</span> <span style="color:#ae81ff">11</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> m<span style="color:#f92672">.</span>count(<span style="color:#ae81ff">0</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">60</span>:
+</span></span><span style="display:flex;"><span>        print(x)</span></span></code></pre></div>
+  </div><ul class="pa0">
+  
+</ul><ul class="pa0">
+  
+</ul>
+
+      
+    </div></article>
+</main><footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://isbur-tutorship.github.io/inf-ege/index.html" >
+    &copy;  ЕГЭ по информатике 2026 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

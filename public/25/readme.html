@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>ЕГЭ по информатике</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Перебор с маской
+Есть прекрасный модуль fnmatch, который позволяет с лёгкостью писать программы к номерам на маски над числами.
+Пример
+
+Среди натуральных чисел, не превышающих $10^10$, найдите все числа, соответствующие маске 1?2157*4, делящиеся на 2024 без остатка. В ответе запишите в первом столбце таблицы все найденные числа в порядке возрастания, а во втором столбце  — соответствующие им результаты деления этих чисел на 2024.
+
+
+    
+      Copy
+    
+    from fnmatch import fnmatch
+
+for n in range(0, 10**10&#43;1, 2024):
+    if fnmatch(str(n), &#34;1?2157*4&#34;):
+        print(n, n // 2024)
+  С помощью модуля itertools можно организовать молниеносный перебор, не сильно раздувая программу:">
+    <meta name="generator" content="Hugo 0.169.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    <link rel="stylesheet" href="/inf-ege/ananke/css/main.02a37ad6c4e155c542d276915a0e3f83f5c7c5fec443350f6e60753f1679b7a7.css" integrity="sha256-AqN61sThVcVC0naRWg4/g/XHxf7EQzUPbmB1PxZ5t6c=" crossorigin="anonymous">
+    <script>
+  (function () {
+    "use strict";
+
+    
+    
+    function revealButtons() {
+      var buttons = document.querySelectorAll(".code-block .code-copy[hidden]");
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].hidden = false;
+      }
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", revealButtons);
+    } else {
+      revealButtons();
+    }
+
+    function flash(button) {
+      var label = button.querySelector(".code-copy-label");
+      var previous = label ? label.textContent : null;
+      button.classList.add("is-copied");
+      if (label) label.textContent = "Copied";
+      window.setTimeout(function () {
+        button.classList.remove("is-copied");
+        if (label && previous !== null) label.textContent = previous;
+      }, 2000);
+    }
+
+    function legacyCopy(text) {
+      var area = document.createElement("textarea");
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "absolute";
+      area.style.left = "-9999px";
+      document.body.appendChild(area);
+      area.select();
+      var ok = false;
+      try {
+        ok = document.execCommand("copy");
+      } catch (e) {
+        ok = false;
+      }
+      document.body.removeChild(area);
+      return ok;
+    }
+
+    function copyFrom(button) {
+      var container = button.closest(".code-block");
+      if (!container) return;
+      var pre = container.querySelector("pre");
+      if (!pre) return;
+      var source = pre.querySelector("code") || pre;
+      var text = source.innerText;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function () { flash(button); },
+          function () { if (legacyCopy(text)) flash(button); }
+        );
+      } else if (legacyCopy(text)) {
+        flash(button);
+      }
+    }
+
+    document.addEventListener("click", function (event) {
+      var button = event.target.closest(".code-copy");
+      if (button) copyFrom(button);
+    });
+  })();
+</script>
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://isbur-tutorship.github.io/inf-ege/25/readme.html">
+    
+
+    
+    
+    <meta property="og:url" content="https://isbur-tutorship.github.io/inf-ege/25/readme.html">
+	<meta property="og:site_name" content="ЕГЭ по информатике">
+	<meta property="og:title" content="ЕГЭ по информатике">
+	<meta property="og:description" content="Перебор с маской Есть прекрасный модуль fnmatch, который позволяет с лёгкостью писать программы к номерам на маски над числами.
+Пример
+Среди натуральных чисел, не превышающих $10^10$, найдите все числа, соответствующие маске 1?2157*4, делящиеся на 2024 без остатка. В ответе запишите в первом столбце таблицы все найденные числа в порядке возрастания, а во втором столбце — соответствующие им результаты деления этих чисел на 2024.
+Copy from fnmatch import fnmatch for n in range(0, 10**10&#43;1, 2024): if fnmatch(str(n), &#34;1?2157*4&#34;): print(n, n // 2024) С помощью модуля itertools можно организовать молниеносный перебор, не сильно раздувая программу:">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="25">
+
+	<meta itemprop="name" content="ЕГЭ по информатике">
+	<meta itemprop="description" content="Перебор с маской Есть прекрасный модуль fnmatch, который позволяет с лёгкостью писать программы к номерам на маски над числами.
+Пример
+Среди натуральных чисел, не превышающих $10^10$, найдите все числа, соответствующие маске 1?2157*4, делящиеся на 2024 без остатка. В ответе запишите в первом столбце таблицы все найденные числа в порядке возрастания, а во втором столбце — соответствующие им результаты деления этих чисел на 2024.
+Copy from fnmatch import fnmatch for n in range(0, 10**10&#43;1, 2024): if fnmatch(str(n), &#34;1?2157*4&#34;): print(n, n // 2024) С помощью модуля itertools можно организовать молниеносный перебор, не сильно раздувая программу:">
+	<meta itemprop="wordCount" content="811">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="ЕГЭ по информатике">
+	<meta name="twitter:description" content="Перебор с маской Есть прекрасный модуль fnmatch, который позволяет с лёгкостью писать программы к номерам на маски над числами.
+Пример
+Среди натуральных чисел, не превышающих $10^10$, найдите все числа, соответствующие маске 1?2157*4, делящиеся на 2024 без остатка. В ответе запишите в первом столбце таблицы все найденные числа в порядке возрастания, а во втором столбце — соответствующие им результаты деления этих чисел на 2024.
+Copy from fnmatch import fnmatch for n in range(0, 10**10&#43;1, 2024): if fnmatch(str(n), &#34;1?2157*4&#34;): print(n, n // 2024) С помощью модуля itertools можно организовать молниеносный перебор, не сильно раздувая программу:">
+
+      
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production is-page is-page page-README">
+   
+  
+
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/inf-ege/index.html" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        ЕГЭ по информатике
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+<main class="pb7" role="main">
+  
+
+  <article class="page-README flex-l mw7 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100"><aside class="instapaper_ignoref b helvetica tracked ttu">
+    <a class="link dim" href="https://isbur-tutorship.github.io/inf-ege/25/index.html">25s</a>
+  </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1"></h1>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-100-l"><h2 id="перебор-с-маской">Перебор с маской</h2>
+<p>Есть прекрасный модуль <code>fnmatch</code>, который позволяет с лёгкостью писать программы к номерам на маски над числами.</p>
+<p><a href="https://inf-ege.sdamgia.ru/problem?id=60267">Пример</a></p>
+<blockquote>
+<p>Среди натуральных чисел, не превышающих $10^10$, найдите все числа, соответствующие маске 1?2157*4, делящиеся на 2024 без остатка. В ответе запишите в первом столбце таблицы все найденные числа в порядке возрастания, а во втором столбце  — соответствующие им результаты деления этих чисел на 2024.</p>
+</blockquote>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> fnmatch <span style="color:#f92672">import</span> fnmatch
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">10</span><span style="color:#f92672">**</span><span style="color:#ae81ff">10</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2024</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> fnmatch(str(n), <span style="color:#e6db74">&#34;1?2157*4&#34;</span>):
+</span></span><span style="display:flex;"><span>        print(n, n <span style="color:#f92672">//</span> <span style="color:#ae81ff">2024</span>)</span></span></code></pre></div>
+  </div><p>С помощью модуля <code>itertools</code> можно организовать <strong>молниеносный</strong> перебор, не сильно раздувая программу:</p>
+<blockquote>
+<p>Назовём маской числа последовательность цифр, в которой также могут встречаться следующие символы:</p>
+<ul>
+<li>символ &ldquo;?&rdquo; означает ровно одну произвольную цифру;</li>
+<li>символ &ldquo;*&rdquo; означает любую последовательность цифр произвольной длины; в том числе &ldquo;*&rdquo; может задавать и пустую последовательность. Например, маске 123*4?5 соответствуют числа 123405 и 12300425.
+Среди натуральных чисел, не превышающих $10^8$, найдите все числа, соответствующие маске 32*823 и не делящиеся на 123 без остатка. В ответе запишите в первом столбце таблицы все найденные числа в порядке возрастания, а во втором столбце - соответствующие им частные от деления на 123.</li>
+</ul>
+</blockquote>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> itertools <span style="color:#f92672">import</span> product
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>):
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> product(<span style="color:#e6db74">&#34;0123456789&#34;</span>, repeat<span style="color:#f92672">=</span>n):
+</span></span><span style="display:flex;"><span>		s <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> l <span style="color:#f92672">in</span> x:
+</span></span><span style="display:flex;"><span>			s <span style="color:#f92672">+=</span> l
+</span></span><span style="display:flex;"><span>		num <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;32&#34;</span> <span style="color:#f92672">+</span> s <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;823&#34;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> int(num) <span style="color:#f92672">%</span> <span style="color:#ae81ff">123</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>			print(num, num <span style="color:#f92672">//</span> <span style="color:#ae81ff">123</span>)</span></span></code></pre></div>
+  </div><h2 id="перебор-делителей">Перебор делителей</h2>
+<h3 id="простейшая-программа-для-определения-простоты-числа">Простейшая программа для определения простоты числа</h3>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> int(input(<span style="color:#e6db74">&#34;Введите число: &#34;</span>))
+</span></span><span style="display:flex;"><span>k <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>, a <span style="color:#f92672">//</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (a <span style="color:#f92672">%</span> i <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>):
+</span></span><span style="display:flex;"><span>        k <span style="color:#f92672">=</span> k<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (k <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>):
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Число простое&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Число не является простым&#34;</span>)</span></span></code></pre></div>
+  </div><p>Пределы, в которых мы ищем делители, просты для понимания: не может быть целочисленного делителя больше, чем половина от числа. Но можно сделать хитрее&hellip;</p>
+<h3 id="более-сложный-пример-поиск-простых-множителей-с-эволюцией">Более сложный пример: поиск простых множителей, с эволюцией</h3>
+<p>(kompege, var-25194722)</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>k <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">6_300_000</span>, <span style="color:#ae81ff">10_000_000</span>):
+</span></span><span style="display:flex;"><span>    x <span style="color:#f92672">=</span> n
+</span></span><span style="display:flex;"><span>    A <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    d <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> d <span style="color:#f92672">*</span> d <span style="color:#f92672">&lt;=</span> n:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> n <span style="color:#f92672">%</span> d <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>            A<span style="color:#f92672">.</span>append(d)
+</span></span><span style="display:flex;"><span>            n <span style="color:#f92672">//=</span> d
+</span></span><span style="display:flex;"><span>        d <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> n <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>        A<span style="color:#f92672">.</span>append(n)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(A) <span style="color:#f92672">!=</span> <span style="color:#ae81ff">3</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    maxI <span style="color:#f92672">=</span> max(A)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    has34 <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> A:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span>(<span style="color:#e6db74">&#34;3&#34;</span> <span style="color:#f92672">in</span> str(i) <span style="color:#f92672">or</span> <span style="color:#e6db74">&#34;4&#34;</span> <span style="color:#f92672">in</span> str(i)):
+</span></span><span style="display:flex;"><span>            has34 <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>    
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> has34:
+</span></span><span style="display:flex;"><span>        print(x, maxI)
+</span></span><span style="display:flex;"><span>        k <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> k <span style="color:#f92672">==</span> <span style="color:#ae81ff">5</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span></span></span></code></pre></div>
+  </div><div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>k <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">6_300_000</span>, <span style="color:#ae81ff">10_000_000</span>):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    x <span style="color:#f92672">=</span> n
+</span></span><span style="display:flex;"><span>    A <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>, int(n<span style="color:#f92672">**</span><span style="color:#ae81ff">0.5</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> x <span style="color:#f92672">%</span> i <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>            A<span style="color:#f92672">.</span>append(i)
+</span></span><span style="display:flex;"><span>            x <span style="color:#f92672">//=</span> i
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> x <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>        A<span style="color:#f92672">.</span>append(x)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(A) <span style="color:#f92672">!=</span> <span style="color:#ae81ff">3</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> all(<span style="color:#e6db74">&#34;3&#34;</span> <span style="color:#f92672">in</span> str(i) <span style="color:#f92672">or</span> <span style="color:#e6db74">&#34;4&#34;</span> <span style="color:#f92672">in</span> str(i) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> A):
+</span></span><span style="display:flex;"><span>        print(n, max(A))
+</span></span><span style="display:flex;"><span>        k <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> k <span style="color:#f92672">==</span> <span style="color:#ae81ff">5</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span></span></span></code></pre></div>
+  </div><p>С комментариями:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>k <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>   <span style="color:#75715e"># счетчик для количества найденных чисел, удовлетворяющих условиям задачи</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">6_300_000</span>, <span style="color:#ae81ff">10_000_000</span>):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    x <span style="color:#f92672">=</span> n   <span style="color:#75715e"># оберегаем n от изменений, так как нам нужно его значение для вывода</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#=================================================#</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Алгоритм разложения числа на простые множители  #</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#=================================================#</span>
+</span></span><span style="display:flex;"><span>    A <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>, int(n<span style="color:#f92672">**</span><span style="color:#ae81ff">0.5</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> x <span style="color:#f92672">%</span> i <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>            A<span style="color:#f92672">.</span>append(i)
+</span></span><span style="display:flex;"><span>            x <span style="color:#f92672">//=</span> i
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> x <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>:   <span style="color:#75715e"># цикл может прерваться раньше, чем x будет равен 1, если x - простое число</span>
+</span></span><span style="display:flex;"><span>        A<span style="color:#f92672">.</span>append(x)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#=================================================#</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Проверяем, что в разложении ровно 3 простых множителя</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(A) <span style="color:#f92672">!=</span> <span style="color:#ae81ff">3</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Проверяем, что все простые множители содержат цифру 3 или 4</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> all(<span style="color:#e6db74">&#34;3&#34;</span> <span style="color:#f92672">in</span> str(i) <span style="color:#f92672">or</span> <span style="color:#e6db74">&#34;4&#34;</span> <span style="color:#f92672">in</span> str(i) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> A):
+</span></span><span style="display:flex;"><span>        print(n, max(A))
+</span></span><span style="display:flex;"><span>        k <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> k <span style="color:#f92672">==</span> <span style="color:#ae81ff">5</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span></span></span></code></pre></div>
+  </div><p>Если потребуется поиск всех делителей, а не только простых, то проще оставить один цикл до корня из верхнего предела, и не забывать каждый раз добавлять в множество делителей его пару.</p>
+<p>Если есть условие вида “5 нечётных делителей”, то можно организовывать перебор до корня четвёртой степени из максимального нечётного делителя:</p>
+$$ n = a_1^{k_1}\cdot a_2^{k_2}\cdot a_3^{k_3}\cdot ... \cdot a_n^{k_n}$$<p>Если n — чётное:</p>
+$$ n = 2^{k_1}\cdot a_2^{k_2}\cdot a_3^{k_3}\cdot ... \cdot a_n^{k_n}$$<p>Всего делителей:</p>
+$$ (k_1+1)\cdot(k_2+1)\cdot(k_3+1)\cdot...\cdot(k_n+1) $$<p>Из них чётных:</p>
+$$ k_1\cdot(k_2+1)\cdot(k_3+1)\cdot...\cdot(k_n+1) $$<p>А нечётных:</p>
+$$ 1\cdot(k_2+1)\cdot(k_3+1)\cdot...\cdot(k_n+1) $$<p>И вот это выражение равно 5.</p>
+<p>Выражение являет собой произведение натуральных чисел. 5 — простое число, у него разложение на множители единственно: $ 5\cdot 1 $</p>
+<p>Единица в этом произведении соответствует выбору нулевой степени для любого простого числа, и этих единиц может быть сколько угодно — это просто означает, что простое число не входит в каноническое разложение $n$.</p>
+<p>А единственный простой множитель 5 означает, что для некоторого $k_2$ выполняется равенство $ k_2 + 1 = 5$, т.е. $k_2=4$.</p>
+<p>Это означает, что число имеет вид $ n = 2^{k_1}\cdot p^4 $, где $p$ — некое простое число.</p>
+<p>Отсюда и алгоритм проверки на существование &ldquo;5 нечётных делителей&rdquo;: произвольное число мы сначала делим, сколько можем, на 2 (избавляясь от вклада чётных делителей), затем извлекаем корень четвёртой степени из нечётной части числа, и, если после этого получилось натуральное число, проверяем его на простоту перебором до корня из ВОТ ЭТОГО числа.</p>
+<p><img src="./assets/image-20261103195853630.png" alt="image-20261103195853630"></p>
+<ul class="pa0">
+  
+</ul><ul class="pa0">
+  
+</ul>
+
+      
+    </div></article>
+</main><footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://isbur-tutorship.github.io/inf-ege/index.html" >
+    &copy;  ЕГЭ по информатике 2026 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

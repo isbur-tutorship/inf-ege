@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>ЕГЭ по информатике</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Сюжет: администратор и файлы (почти не актуально в 2026)
+Пример — задача 225 с kompege.ru
+
+    
+      Copy
+    
+    with open(&#34;26.txt&#34;) as f:
+    S, N = [int(_) for _ in f.readline().split()]
+    A = [int(_) for _ in f.readlines()]
+
+A.sort(reverse=True)
+
+print(A[:100])
+
+s = 0
+i = 0
+while s &#43; A[i] &lt; S:
+    s &#43;= A[i]
+    i &#43;= 1
+
+for j in range(i, len(A)):
+    if A[j] &lt;= S - s:
+        s &#43;= A[j]
+        break
+    
+print(i &#43; 1, A[j])
+  ">
+    <meta name="generator" content="Hugo 0.169.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    <link rel="stylesheet" href="/inf-ege/ananke/css/main.02a37ad6c4e155c542d276915a0e3f83f5c7c5fec443350f6e60753f1679b7a7.css" integrity="sha256-AqN61sThVcVC0naRWg4/g/XHxf7EQzUPbmB1PxZ5t6c=" crossorigin="anonymous">
+    <script>
+  (function () {
+    "use strict";
+
+    
+    
+    function revealButtons() {
+      var buttons = document.querySelectorAll(".code-block .code-copy[hidden]");
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].hidden = false;
+      }
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", revealButtons);
+    } else {
+      revealButtons();
+    }
+
+    function flash(button) {
+      var label = button.querySelector(".code-copy-label");
+      var previous = label ? label.textContent : null;
+      button.classList.add("is-copied");
+      if (label) label.textContent = "Copied";
+      window.setTimeout(function () {
+        button.classList.remove("is-copied");
+        if (label && previous !== null) label.textContent = previous;
+      }, 2000);
+    }
+
+    function legacyCopy(text) {
+      var area = document.createElement("textarea");
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "absolute";
+      area.style.left = "-9999px";
+      document.body.appendChild(area);
+      area.select();
+      var ok = false;
+      try {
+        ok = document.execCommand("copy");
+      } catch (e) {
+        ok = false;
+      }
+      document.body.removeChild(area);
+      return ok;
+    }
+
+    function copyFrom(button) {
+      var container = button.closest(".code-block");
+      if (!container) return;
+      var pre = container.querySelector("pre");
+      if (!pre) return;
+      var source = pre.querySelector("code") || pre;
+      var text = source.innerText;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function () { flash(button); },
+          function () { if (legacyCopy(text)) flash(button); }
+        );
+      } else if (legacyCopy(text)) {
+        flash(button);
+      }
+    }
+
+    document.addEventListener("click", function (event) {
+      var button = event.target.closest(".code-copy");
+      if (button) copyFrom(button);
+    });
+  })();
+</script>
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://isbur-tutorship.github.io/inf-ege/26/readme.html">
+    
+
+    
+    
+    <meta property="og:url" content="https://isbur-tutorship.github.io/inf-ege/26/readme.html">
+	<meta property="og:site_name" content="ЕГЭ по информатике">
+	<meta property="og:title" content="ЕГЭ по информатике">
+	<meta property="og:description" content="Сюжет: администратор и файлы (почти не актуально в 2026) Пример — задача 225 с kompege.ru
+Copy with open(&#34;26.txt&#34;) as f: S, N = [int(_) for _ in f.readline().split()] A = [int(_) for _ in f.readlines()] A.sort(reverse=True) print(A[:100]) s = 0 i = 0 while s &#43; A[i] &lt; S: s &#43;= A[i] i &#43;= 1 for j in range(i, len(A)): if A[j] &lt;= S - s: s &#43;= A[j] break print(i &#43; 1, A[j])">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="26">
+
+	<meta itemprop="name" content="ЕГЭ по информатике">
+	<meta itemprop="description" content="Сюжет: администратор и файлы (почти не актуально в 2026) Пример — задача 225 с kompege.ru
+Copy with open(&#34;26.txt&#34;) as f: S, N = [int(_) for _ in f.readline().split()] A = [int(_) for _ in f.readlines()] A.sort(reverse=True) print(A[:100]) s = 0 i = 0 while s &#43; A[i] &lt; S: s &#43;= A[i] i &#43;= 1 for j in range(i, len(A)): if A[j] &lt;= S - s: s &#43;= A[j] break print(i &#43; 1, A[j])">
+	<meta itemprop="wordCount" content="74">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="ЕГЭ по информатике">
+	<meta name="twitter:description" content="Сюжет: администратор и файлы (почти не актуально в 2026) Пример — задача 225 с kompege.ru
+Copy with open(&#34;26.txt&#34;) as f: S, N = [int(_) for _ in f.readline().split()] A = [int(_) for _ in f.readlines()] A.sort(reverse=True) print(A[:100]) s = 0 i = 0 while s &#43; A[i] &lt; S: s &#43;= A[i] i &#43;= 1 for j in range(i, len(A)): if A[j] &lt;= S - s: s &#43;= A[j] break print(i &#43; 1, A[j])">
+
+      
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production is-page is-page page-README">
+   
+  
+
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/inf-ege/index.html" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        ЕГЭ по информатике
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+<main class="pb7" role="main">
+  
+
+  <article class="page-README flex-l mw7 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100"><aside class="instapaper_ignoref b helvetica tracked ttu">
+    <a class="link dim" href="https://isbur-tutorship.github.io/inf-ege/26/index.html">26s</a>
+  </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1"></h1>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-100-l"><h3 id="сюжет-администратор-и-файлы-почти-не-актуально-в-2026">Сюжет: администратор и файлы (почти не актуально в 2026)</h3>
+<p>Пример — задача 225 с kompege.ru</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#34;26.txt&#34;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>    S, N <span style="color:#f92672">=</span> [int(_) <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> f<span style="color:#f92672">.</span>readline()<span style="color:#f92672">.</span>split()]
+</span></span><span style="display:flex;"><span>    A <span style="color:#f92672">=</span> [int(_) <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> f<span style="color:#f92672">.</span>readlines()]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>A<span style="color:#f92672">.</span>sort(reverse<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(A[:<span style="color:#ae81ff">100</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>s <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> s <span style="color:#f92672">+</span> A[i] <span style="color:#f92672">&lt;</span> S:
+</span></span><span style="display:flex;"><span>    s <span style="color:#f92672">+=</span> A[i]
+</span></span><span style="display:flex;"><span>    i <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(i, len(A)):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> A[j] <span style="color:#f92672">&lt;=</span> S <span style="color:#f92672">-</span> s:
+</span></span><span style="display:flex;"><span>        s <span style="color:#f92672">+=</span> A[j]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>print(i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, A[j])</span></span></code></pre></div>
+  </div><ul class="pa0">
+  
+</ul><ul class="pa0">
+  
+</ul>
+
+      
+    </div></article>
+</main><footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://isbur-tutorship.github.io/inf-ege/index.html" >
+    &copy;  ЕГЭ по информатике 2026 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

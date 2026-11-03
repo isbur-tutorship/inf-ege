@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>ЕГЭ по информатике</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Задание 7
+Объём информации
+Таблица перевода распространённых единиц измерения объёма информации:
+1 байт = 8 бит = $2^3$ бит
+1 Кбайт = 1024 байта = $2^{10}$ байта = $2^{10}\cdot2^3$ бит = $2^{13}$ бит
+1 Мбайт = 1024 Кбайт = $2^{10}$ Кбайт = $2^{10}\cdot2^{10}$ байт = $2^{20}$ байт = $2^{20}\cdot2^3$ бит = $2^{23}$ бит
+Десятичные приставки:
+кило — мега — гига — тера — пета
+Объём изображения
+$I=x\cdot y\cdot i$ бит, где $x$ — ширина, $y$ — высота и $i$ — глубина кодирования цвета (или просто глубина цвета).">
+    <meta name="generator" content="Hugo 0.169.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    <link rel="stylesheet" href="/inf-ege/ananke/css/main.02a37ad6c4e155c542d276915a0e3f83f5c7c5fec443350f6e60753f1679b7a7.css" integrity="sha256-AqN61sThVcVC0naRWg4/g/XHxf7EQzUPbmB1PxZ5t6c=" crossorigin="anonymous">
+    <script>
+  (function () {
+    "use strict";
+
+    
+    
+    function revealButtons() {
+      var buttons = document.querySelectorAll(".code-block .code-copy[hidden]");
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].hidden = false;
+      }
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", revealButtons);
+    } else {
+      revealButtons();
+    }
+
+    function flash(button) {
+      var label = button.querySelector(".code-copy-label");
+      var previous = label ? label.textContent : null;
+      button.classList.add("is-copied");
+      if (label) label.textContent = "Copied";
+      window.setTimeout(function () {
+        button.classList.remove("is-copied");
+        if (label && previous !== null) label.textContent = previous;
+      }, 2000);
+    }
+
+    function legacyCopy(text) {
+      var area = document.createElement("textarea");
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "absolute";
+      area.style.left = "-9999px";
+      document.body.appendChild(area);
+      area.select();
+      var ok = false;
+      try {
+        ok = document.execCommand("copy");
+      } catch (e) {
+        ok = false;
+      }
+      document.body.removeChild(area);
+      return ok;
+    }
+
+    function copyFrom(button) {
+      var container = button.closest(".code-block");
+      if (!container) return;
+      var pre = container.querySelector("pre");
+      if (!pre) return;
+      var source = pre.querySelector("code") || pre;
+      var text = source.innerText;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function () { flash(button); },
+          function () { if (legacyCopy(text)) flash(button); }
+        );
+      } else if (legacyCopy(text)) {
+        flash(button);
+      }
+    }
+
+    document.addEventListener("click", function (event) {
+      var button = event.target.closest(".code-copy");
+      if (button) copyFrom(button);
+    });
+  })();
+</script>
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://isbur-tutorship.github.io/inf-ege/07/readme.html">
+    
+
+    
+    
+    <meta property="og:url" content="https://isbur-tutorship.github.io/inf-ege/07/readme.html">
+	<meta property="og:site_name" content="ЕГЭ по информатике">
+	<meta property="og:title" content="ЕГЭ по информатике">
+	<meta property="og:description" content="Задание 7 Объём информации Таблица перевода распространённых единиц измерения объёма информации:
+1 байт = 8 бит = $2^3$ бит 1 Кбайт = 1024 байта = $2^{10}$ байта = $2^{10}\cdot2^3$ бит = $2^{13}$ бит 1 Мбайт = 1024 Кбайт = $2^{10}$ Кбайт = $2^{10}\cdot2^{10}$ байт = $2^{20}$ байт = $2^{20}\cdot2^3$ бит = $2^{23}$ бит
+Десятичные приставки:
+кило — мега — гига — тера — пета
+Объём изображения $I=x\cdot y\cdot i$ бит, где $x$ — ширина, $y$ — высота и $i$ — глубина кодирования цвета (или просто глубина цвета).">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="07">
+
+	<meta itemprop="name" content="ЕГЭ по информатике">
+	<meta itemprop="description" content="Задание 7 Объём информации Таблица перевода распространённых единиц измерения объёма информации:
+1 байт = 8 бит = $2^3$ бит 1 Кбайт = 1024 байта = $2^{10}$ байта = $2^{10}\cdot2^3$ бит = $2^{13}$ бит 1 Мбайт = 1024 Кбайт = $2^{10}$ Кбайт = $2^{10}\cdot2^{10}$ байт = $2^{20}$ байт = $2^{20}\cdot2^3$ бит = $2^{23}$ бит
+Десятичные приставки:
+кило — мега — гига — тера — пета
+Объём изображения $I=x\cdot y\cdot i$ бит, где $x$ — ширина, $y$ — высота и $i$ — глубина кодирования цвета (или просто глубина цвета).">
+	<meta itemprop="wordCount" content="519">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="ЕГЭ по информатике">
+	<meta name="twitter:description" content="Задание 7 Объём информации Таблица перевода распространённых единиц измерения объёма информации:
+1 байт = 8 бит = $2^3$ бит 1 Кбайт = 1024 байта = $2^{10}$ байта = $2^{10}\cdot2^3$ бит = $2^{13}$ бит 1 Мбайт = 1024 Кбайт = $2^{10}$ Кбайт = $2^{10}\cdot2^{10}$ байт = $2^{20}$ байт = $2^{20}\cdot2^3$ бит = $2^{23}$ бит
+Десятичные приставки:
+кило — мега — гига — тера — пета
+Объём изображения $I=x\cdot y\cdot i$ бит, где $x$ — ширина, $y$ — высота и $i$ — глубина кодирования цвета (или просто глубина цвета).">
+
+      
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production is-page is-page page-README">
+   
+  
+
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/inf-ege/index.html" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        ЕГЭ по информатике
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+<main class="pb7" role="main">
+  
+
+  <article class="page-README flex-l mw7 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100"><aside class="instapaper_ignoref b helvetica tracked ttu">
+    <a class="link dim" href="https://isbur-tutorship.github.io/inf-ege/07/index.html">07s</a>
+  </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1"></h1>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-100-l"><h1 id="задание-7">Задание 7</h1>
+<h2 id="объём-информации">Объём информации</h2>
+<p>Таблица перевода распространённых единиц измерения объёма информации:</p>
+<p>1 байт = 8 бит = $2^3$ бит
+1 Кбайт = 1024 байта = $2^{10}$ байта = $2^{10}\cdot2^3$ бит = $2^{13}$ бит
+1 Мбайт = 1024 Кбайт = $2^{10}$ Кбайт = $2^{10}\cdot2^{10}$ байт = $2^{20}$ байт = $2^{20}\cdot2^3$ бит = $2^{23}$ бит</p>
+<p>Десятичные приставки:</p>
+<p>кило — мега — гига — тера — пета</p>
+<h2 id="объём-изображения">Объём изображения</h2>
+<p>$I=x\cdot y\cdot i$ бит, где $x$ — ширина, $y$ — высота и $i$ — глубина кодирования цвета (или просто глубина цвета).</p>
+<p>Глубина цвета — это то, сколько бит тратится на кодирование цвета для одного пикселя.</p>
+<p>Пусть $N$ — это число цветов в палитре изображения. Тогда $N$ и $i$ связаны соотношением:
+</p>
+$$ 2^i \ge N $$<p>
+<strong>Пример.</strong> ![[Pasted image 20260907185222.png]]</p>
+<p><img src="./assets/Pasted%20image%2020260524233144.png" alt=""></p>
+<p>На картинке изображены круги в квадратах дюйм на дюйм. DPI (<em>Dots Per Inch — Точек На Дюйм</em>) — это количество точек в линейном дюйме, то есть общее количество пикселей вычисляется как DPI$^2$. Ещё в текстах задач попадается аббревиатура PPI (<em>Pixels Per Inch — Пикселей На Дюйм</em>): в рамках задач ЕГЭ это то же, что и DPI. В реальности разница, конечно, есть (иначе не было бы смысла вводить разные термины). Не вдаваясь в технические подробности, могу сказать лишь, что PPI принято использовать у производителей дисплеев, а DPI — у производителей принтеров, и PPI изображения на дисплее и DPI изображения после печати зачастую не соотносятся как 1:1.</p>
+<h2 id="музыкальный-фрагмент">Музыкальный фрагмент</h2>
+<p>Пусть:</p>
+<p>$t$ — время записи</p>
+<p>$f$ — частота дискретизации</p>
+<p>$i$ — глубина кодирования</p>
+<p>$n$ — число каналов</p>
+<p>$V$ — объём файла</p>
+<p>Тогда объём данных находится следующим образом:</p>
+<p>$V=n\cdot f\cdot i\cdot t$</p>
+<p>Как узнать число каналов:</p>
+<table>
+	<thead>
+			<tr>
+					<th>Название</th>
+					<th>Число каналов</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>моно</td>
+					<td>1</td>
+			</tr>
+			<tr>
+					<td>стерео</td>
+					<td>2</td>
+			</tr>
+			<tr>
+					<td>квадро</td>
+					<td>4</td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="пример">Пример</h3>
+<blockquote>
+<p>Музыкальный фрагмент был записан в формате моно, оцифрован и сохранён в виде файла
+без использования сжатия данных. Размер полученного файла – 24 Мбайт. Затем тот же
+музыкальный фрагмент был записан повторно в формате стерео (двухканальная запись) и
+оцифрован с разрешением в 4 раза выше и частотой дискретизации в 1,5 раза меньше, чем в
+первый раз. Сжатие данных не производилось. Укажите размер файла в Мбайт, полученного при повторной записи. В ответе запишите только целое число, единицу измерения писать не нужно.</p>
+</blockquote>
+<h2 id="видео">Видео</h2>
+$$Объём = размер\: одного\: кадра\: (см. изображение) \cdot частота\: дискретизации \cdot время + звуковой\: канал(-ы)\: (см. звук) $$<h2 id="передача-данных">Передача данных</h2>
+<blockquote>
+<p>Музыкальный фрагмент был оцифрован и записан в виде файла без использования сжатия
+данных. Получившийся файл был передан в город А по каналу связи за 15 секунд. Затем тот же
+музыкальный фрагмент был оцифрован повторно с разрешением в 2 раза выше и частотой
+дискретизации в 1,5 раза меньше, чем в первый раз. Сжатие данных не производилось.
+Полученный файл был передан в город Б; пропускная способность канала связи с городом Б в 2
+раза выше, чем канала связи с городом А. Сколько секунд длилась передача файла в город Б? В
+ответе запишите только целое число, единицу измерения писать не нужно.</p>
+</blockquote>
+<p>Введём также переменную v — скорость передачи данных, и $\tau$ — время передачи данных.</p>
+<p>Тогда верно соотношение</p>
+<p>$V=v\cdot\tau$</p>
+<p>Ну и вычисляем время по формуле (подставляя формулу $V=n\cdot f\cdot i\cdot t$ и выражая $\tau$ из формулы выше):</p>
+$$\tau=\frac{n\cdot f\cdot i\cdot t}{v}$$<h2 id="больше-разобранных-примеров">Больше разобранных примеров</h2>
+<p><a href="https://ege-study.ru/ru/ege/materialy/informatika/polnyi-kurs-podgotovki-k-ege-po-informatike/zadanie-7/">https://ege-study.ru/ru/ege/materialy/informatika/polnyi-kurs-podgotovki-k-ege-po-informatike/zadanie-7/</a></p>
+<ul class="pa0">
+  
+</ul><ul class="pa0">
+  
+</ul>
+
+      
+    </div></article>
+</main><footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://isbur-tutorship.github.io/inf-ege/index.html" >
+    &copy;  ЕГЭ по информатике 2026 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

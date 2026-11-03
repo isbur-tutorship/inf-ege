@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>ЕГЭ по информатике</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.169.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    <link rel="stylesheet" href="/inf-ege/ananke/css/main.02a37ad6c4e155c542d276915a0e3f83f5c7c5fec443350f6e60753f1679b7a7.css" integrity="sha256-AqN61sThVcVC0naRWg4/g/XHxf7EQzUPbmB1PxZ5t6c=" crossorigin="anonymous">
+    <script>
+  (function () {
+    "use strict";
+
+    
+    
+    function revealButtons() {
+      var buttons = document.querySelectorAll(".code-block .code-copy[hidden]");
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].hidden = false;
+      }
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", revealButtons);
+    } else {
+      revealButtons();
+    }
+
+    function flash(button) {
+      var label = button.querySelector(".code-copy-label");
+      var previous = label ? label.textContent : null;
+      button.classList.add("is-copied");
+      if (label) label.textContent = "Copied";
+      window.setTimeout(function () {
+        button.classList.remove("is-copied");
+        if (label && previous !== null) label.textContent = previous;
+      }, 2000);
+    }
+
+    function legacyCopy(text) {
+      var area = document.createElement("textarea");
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "absolute";
+      area.style.left = "-9999px";
+      document.body.appendChild(area);
+      area.select();
+      var ok = false;
+      try {
+        ok = document.execCommand("copy");
+      } catch (e) {
+        ok = false;
+      }
+      document.body.removeChild(area);
+      return ok;
+    }
+
+    function copyFrom(button) {
+      var container = button.closest(".code-block");
+      if (!container) return;
+      var pre = container.querySelector("pre");
+      if (!pre) return;
+      var source = pre.querySelector("code") || pre;
+      var text = source.innerText;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function () { flash(button); },
+          function () { if (legacyCopy(text)) flash(button); }
+        );
+      } else if (legacyCopy(text)) {
+        flash(button);
+      }
+    }
+
+    document.addEventListener("click", function (event) {
+      var button = event.target.closest(".code-copy");
+      if (button) copyFrom(button);
+    });
+  })();
+</script>
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://isbur-tutorship.github.io/inf-ege/05/index.html">
+    
+
+    
+    
+    <meta property="og:url" content="https://isbur-tutorship.github.io/inf-ege/05/index.html">
+	<meta property="og:site_name" content="ЕГЭ по информатике">
+	<meta property="og:title" content="05s">
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="05s">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="05s">
+
+      
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production is-section is-section">
+
+  <header>
+    <div class="pb3-m pb6-l bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/inf-ege/index.html" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        ЕГЭ по информатике
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="tc-l pv3 ph3 ph4-ns">
+        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
+          05s
+        </h1>
+        
+      </div>
+    </div>
+  </header>
+
+<main class="pb7" role="main">
+  
+  
+
+  <article class="pa3 pa4-ns nested-copy-line-height">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links mid-gray"></section>
+    <section class="flex-ns mt5 flex-wrap justify-around">
+      
+        <div class="w-100 w-30-l mb4 relative bg-white">
+          
+<div class="w-100 mb4 nested-copy-line-height relative bg-white">
+  <div class="mb3 pa4 gray overflow-hidden bg-white">
+    <span class="f6 db">05s</span>
+    
+    <h1 class="f3 near-black">
+      <a href="/inf-ege/05/readme.html" class="link black dim">
+        
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <h3 id="про-перевод-между-системами-счисления">Про перевод между системами счисления</h3>
+<p>Есть встроенная функция <code>bin()</code>, вот пример её использования:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>n <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>n <span style="color:#f92672">=</span> bin(n)
+</span></span><span style="display:flex;"><span>n <span style="color:#f92672">=</span> n[<span style="color:#ae81ff">2</span>:]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> n[len(n)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;0&#34;</span>:
+</span></span><span style="display:flex;"><span>    n <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;10&#34;</span> <span style="color:#f92672">+</span> n
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    n <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#f92672">+</span> n <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;01&#34;</span>
+</span></span><span style="display:flex;"><span>n <span style="color:#f92672">=</span> int(n, <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>print(n)</span></span></code></pre></div>
+  </div><p>Обратно в десятичную систему счисления можно перевести, используя функцию int() с двумя аргументами, первый — это запись числа в данной системе счисления (в виде строчки), второй — основание данной системы счисления:</p>
+<div class="code-block">
+    <button class="code-copy" type="button" hidden aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(n)
+</span></span><span style="display:flex;"><span>n <span style="color:#f92672">=</span> int(n, <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>print(n)</span></span></code></pre></div>
+  </div><p><img src="data:image/png;base64,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" alt="119"></p>
+    </div>
+    <a href="/inf-ege/05/readme.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">читать дальше</a>
+  </div>
+</div>
+
+        </div>
+      
+    </section>
+    </article>
+</main><footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://isbur-tutorship.github.io/inf-ege/index.html" >
+    &copy;  ЕГЭ по информатике 2026 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
