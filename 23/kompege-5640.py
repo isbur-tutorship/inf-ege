@@ -1,4 +1,4 @@
-def f(q,w="hui"):
+def f(q,w):
     s = q % 10 + q // 10 % 10
     if q == w:
         return 1
